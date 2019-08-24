@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+
+        android:id="@+id/profile_img"
+
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:src="@drawable/profile_photo" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:breakStrategy="simple"
+            android:id="@+id/profile_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="barcelon.mcand"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+        <TextView
+            android:gravity="center_horizontal"
+            android:breakStrategy="simple"
+            android:id="@+id/edu_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:textSize="20sp"
+            android:textColor="@color/grey"
+            android:text="physics mathematics legendary clash of clashs"
+            android:textAppearance="?attr/textAppearanceListItem" />
+    </LinearLayout>
+
+</LinearLayout>
