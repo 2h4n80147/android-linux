@@ -20,7 +20,7 @@ interface backendApiService {
     @GET("students/")
      fun getStudentList() : Response<List<Student>>
     @GET("education_centers/")
-     fun getEducationCenterList() : Response<List<EducationCenter>>
+     fun getEducationCenterList() : Observable<List<EducationCenter> >
 
 
 

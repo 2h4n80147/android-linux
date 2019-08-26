@@ -70,7 +70,7 @@ object EducationCenterContent {
 //        }
     }
 
-    private fun addItem(item: EducationCenter) {
+    public fun addItem(item: EducationCenter) {
         ITEMS.add(item)
         ITEM_MAP.put(item.id.toString(), item)
         COUNT++

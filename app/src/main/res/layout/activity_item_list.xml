@@ -8,9 +8,11 @@
     tools:context=".ItemListActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:visibility="gone"
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <androidx.appcompat.widget.Toolbar
@@ -21,22 +23,25 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+
     <FrameLayout
+        android:layout_marginTop="10dp"
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        >
 
         <include layout="@layout/item_list" />
     </FrameLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        app:srcCompat="@android:drawable/ic_search_category_default" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

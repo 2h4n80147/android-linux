@@ -17,6 +17,8 @@ import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_item_list.*
 import kotlinx.android.synthetic.main.item_list_content.view.*
 import kotlinx.android.synthetic.main.item_list.*
+import kotlin.math.max
+import kotlin.math.min
 
 /**
  * An activity representing a list of Pings. This activity
@@ -41,7 +43,6 @@ class ItemListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_item_list)
 
         setSupportActionBar(toolbar)
-        toolbar.title = title
 
         recyclerView = item_list
 //
@@ -65,7 +66,7 @@ class ItemListActivity : AppCompatActivity() {
         else
             setupRecyclerView()
     }
-    fun getEducationContent() {
+    fun getEducationSample() {
         var id = 7
         val apiService = backendApiService.createWithRx()
         var res = apiService.getEducationCenterById(id)
@@ -81,7 +82,26 @@ class ItemListActivity : AppCompatActivity() {
                 }
             )
     }
-    fun get
+    fun getEducationContent() {
+        val apiService = backendApiService.createWithRx()
+        var res = apiService.getEducationCenterList()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(
+                {
+                    Log.d("eduContent", "education content is loaded with $it.size elements")
+                    var list = it
+
+                    for (i in 0.. min(10-1,list.size-1)) {
+                        EducationCenterContent.addItem(list[i])
+                    }
+                    setupRecyclerView()
+                },
+                {
+                    Log.d("error","throwable: $it")
+                }
+            )
+    }
     fun setupRecyclerView() {
 
         recyclerView.adapter = SimpleItemRecyclerViewAdapter(this, eduContent , twoPane)
@@ -100,9 +120,9 @@ class ItemListActivity : AppCompatActivity() {
             onClickListener = View.OnClickListener { v ->
                 val item = v.tag as EducationCenter
                 if (twoPane) {
-                    val fragment = ItemDetailFragment().apply {
+                    val fragment = EducationCenterDetailFragment().apply {
                         arguments = Bundle().apply {
-                            putString(ItemDetailFragment.ARG_ITEM_ID, item.id.toString())
+                            putString(EducationCenterDetailFragment.ARG_ITEM_ID, item.id.toString())
                         }
                     }
                     parentActivity.supportFragmentManager
@@ -111,7 +131,7 @@ class ItemListActivity : AppCompatActivity() {
                         .commit()
                 } else {
                     val intent = Intent(v.context, ItemDetailActivity::class.java).apply {
-                        putExtra(ItemDetailFragment.ARG_ITEM_ID, item.id)
+                        putExtra(EducationCenterDetailFragment.ARG_ITEM_ID, item.id.toString())
                     }
                     v.context.startActivity(intent)
                 }
@@ -122,7 +142,7 @@ class ItemListActivity : AppCompatActivity() {
                 .inflate(R.layout.item_list_content, parent, false)
             return ViewHolder(view)
         }
-
+        final var spacing = String
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
             val item = values[position]
@@ -155,6 +175,5 @@ class ItemListActivity : AppCompatActivity() {
             val nameView: TextView = view.profile_name
             val edu_fieldView: TextView = view.edu_field
         }
-
     }
 }

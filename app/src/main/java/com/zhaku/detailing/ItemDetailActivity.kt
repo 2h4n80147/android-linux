@@ -1,6 +1,5 @@
 package com.zhaku.detailing
 
-import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
@@ -40,11 +39,11 @@ class ItemDetailActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             // Create the detail fragment and add it to the activity
             // using a fragment transaction.
-            val fragment = ItemDetailFragment().apply {
+            val fragment = EducationCenterDetailFragment().apply {
                 arguments = Bundle().apply {
                     putString(
-                        ItemDetailFragment.ARG_ITEM_ID,
-                        intent.getStringExtra(ItemDetailFragment.ARG_ITEM_ID)
+                        EducationCenterDetailFragment.ARG_ITEM_ID,
+                        intent.getStringExtra(EducationCenterDetailFragment.ARG_ITEM_ID)
                     )
                 }
             }
