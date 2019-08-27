@@ -17,4 +17,7 @@
     <color name="mcam_color_light">#FAFAFA</color>
     <color name="mcam_color_dark">#424242</color>
 
+    <color name="active_tab_color">@color/black</color>
+    <color name="inactive_tab_color">@color/grey</color>
+
 </resources>

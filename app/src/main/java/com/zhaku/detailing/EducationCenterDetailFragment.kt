@@ -15,6 +15,7 @@ import com.zhaku.detailing.dummy.DummyContent
 import kotlinx.android.synthetic.main.activity_item_detail.*
 import kotlinx.android.synthetic.main.item_detail.*
 import kotlinx.android.synthetic.main.item_detail.view.*
+import org.w3c.dom.Text
 
 /**
  * A fragment representing a single Item detail screen.
@@ -39,7 +40,9 @@ class EducationCenterDetailFragment : Fragment() {
                 // to load content from a content provider.
 
                 item = EducationCenterContent.ITEM_MAP[it.getString(ARG_ITEM_ID)]!!
-                activity?.detail_toolbar?.title = item.user.first_name.toString()
+
+                activity?.detail_toolbar?.title = item.user.first_name
+
                 Log.d("oncreate", item.user.first_name)
         }
     }
@@ -51,12 +54,18 @@ class EducationCenterDetailFragment : Fragment() {
 
         val rootView = inflater.inflate(R.layout.item_detail, container, false)
 
-        val infoText = rootView.findViewById<TextView>(R.id.detail_info_text)
-        val avatarView = rootView.findViewById<ImageView>(R.id.detaiL_profile_image)
+        val infoText = rootView.findViewById<TextView>(R.id.edu_detail_info_text)
+        val avatarView = rootView.findViewById<ImageView>(R.id.edu_detaiL_profile_image)
+        val edu_name : TextView = rootView.findViewById(R.id.edu_name)
+        val edu_city : TextView = rootView.findViewById(R.id.edu_city)
+        val edu_fields : TextView = rootView.findViewById(R.id.detail_edu_fields)
+        val cost_range : TextView = rootView.findViewById(R.id.edu_cost_range)
+        val contact_number: TextView = rootView.findViewById(R.id.edu_contact_number)
+
 
         // Show the dummy content as text in a TextView.
 
-        item?.let {
+        item.let {
             infoText.text = formatToParagraph(it.info)
             if (item.profile_photos.isNotEmpty()) {
                 Glide.with(rootView)
@@ -64,15 +73,29 @@ class EducationCenterDetailFragment : Fragment() {
                     .centerCrop()
                     .into(avatarView)
             }
+
+
+            edu_name.text =  it.user.first_name + it.user.last_name
+            edu_city.text = Locations.cities[it.location.city]
+            edu_fields.text = edufield_torow(it.ed_field)
+            cost_range.text = "с " + it.min_amount + " до " + it.max_amount
+            contact_number.text = it.phone_number
         }
 
+
         return rootView
+    }
+    public fun edufield_torow(fields : List<EdField>) : String {
+        var s = StringBuilder()
+        for (i : Int in 0..fields.size-2)
+            s.append(fields[i].name+", ")
+        s.append(fields.last().name)
+        return s.toString()
     }
     fun formatToParagraph (s : String) : String {
         var x = "\n".count{ s.contains(it)}
         
-        Log.d("Spacing", "replaced this much $s.count('\n')")
-        s.replace("\n", "\n   ")
+        Log.d("Spacing", "replaced this much $x")
 
         return s
     }

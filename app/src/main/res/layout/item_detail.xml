@@ -7,11 +7,14 @@
     android:orientation="vertical"
 
     xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
     <ImageView
-        android:id="@+id/detaiL_profile_image"
+        android:id="@+id/edu_detaiL_profile_image"
         android:layout_width="match_parent"
         android:layout_height="96dp"
-        android:src="@drawable/profile_photo"
+        android:src="@drawable/ic_school_foreground"
         />
 
     <LinearLayout
@@ -21,6 +24,8 @@
         android:orientation="vertical"
         >
         <LinearLayout
+            android:layout_marginTop="10dp"
+
             android:padding="10dp"
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -78,7 +83,7 @@
                 android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/edu_fields"
+                android:id="@+id/detail_edu_fields"
                 android:text="Phsysics, Mathematics, Algebra"/>
         </LinearLayout>
         <LinearLayout
@@ -96,7 +101,7 @@
                 android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/cost_range"
+                android:id="@+id/edu_cost_range"
                 android:text=" от 1146 до 1250 тг/час"/>
         </LinearLayout>
         <LinearLayout
@@ -113,16 +118,17 @@
                 android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/contact_number"
+                android:id="@+id/edu_contact_number"
                 android:text="+77777777"/>
         </LinearLayout>
 
     </LinearLayout>
     <TextView
+        android:layout_marginLeft="12dp"
         android:layout_marginTop="10dp"
 
         android:background="@drawable/white_grey_border_top"
-        android:id="@+id/detail_info_text"
+        android:id="@+id/edu_detail_info_text"
         android:padding="2dp"
         android:textColor="@color/black"
         android:text="    Цель учебного центра “MnC”:

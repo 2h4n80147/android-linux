@@ -5,6 +5,9 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_item_detail.*
+import android.content.Intent
+
+
 
 /**
  * An activity representing a single Item detail screen. This
@@ -56,6 +59,7 @@ class ItemDetailActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem) =
         when (item.itemId) {
+
             android.R.id.home -> {
                 // This ID represents the Home or Up button. In the case of this
                 // activity, the Up button is shown. For
@@ -63,6 +67,11 @@ class ItemDetailActivity : AppCompatActivity() {
                 //
                 // http://developer.android.com/design/patterns/navigation.html#up-vs-back
                 super.onBackPressed()
+                true
+            }
+            R.id.backArrow   -> {
+                val intent = Intent(this, SearchActivity::class.java)
+                startActivity(intent)
                 true
             }
             else -> super.onOptionsItemSelected(item)
