@@ -109,7 +109,13 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string-array name="SexList">
         <item>Не указано</item>
-        <item>Муж.</item>
-        <item>Жен.</item>
+        <item>Мужcкой</item>
+        <item>Женcкий</item>
+    </string-array>
+    <string-array name="city">
+        <item>Любой</item>
+        <item>Алматы</item>
+        <item>Нур-султан / Астана </item>
+        <item>Шымкент</item>
     </string-array>
 </resources>

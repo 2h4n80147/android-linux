@@ -9,18 +9,27 @@
 
 
 
-    <FrameLayout
-        android:layout_marginTop="?attr/actionBarSize"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_bar"
-        android:id="@+id/fragment_container"
+<!--    <FrameLayout-->
+<!--        android:layout_marginTop="?attr/actionBarSize"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/bottom_bar"-->
+<!--        android:id="@+id/fragment_container"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_above="@id/bottom_bar"-->
+<!--        >-->
+<!--    </FrameLayout>-->
+
+    <fragment
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/my_nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:navGraph="@navigation/bottom_navigation"
+        app:defaultNavHost="true"
         android:layout_above="@id/bottom_bar"
-        >
-    </FrameLayout>
-
+        />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_bar"

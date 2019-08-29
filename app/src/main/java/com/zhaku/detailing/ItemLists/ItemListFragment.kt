@@ -38,7 +38,8 @@ class ItemListFragment : Fragment() {
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        onstart()
+        if (savedInstanceState == null)
+            onstart()
 
     }
 

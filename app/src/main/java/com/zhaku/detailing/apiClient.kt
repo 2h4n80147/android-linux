@@ -39,8 +39,8 @@ interface backendApiService {
 
     @GET("customers/students")
     fun queryOnCity(@Query("city") city : String) : Observable<List<Student>>
-    @POST("customers/students")
-    fun registerStudent(@Body(""))
+    //@POST("customers/students")
+    //fun registerStudent(@Body(""))
     /**
      * Companion object to create the apiService
      */

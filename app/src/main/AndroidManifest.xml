@@ -12,18 +12,9 @@
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Login.LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-
-        </activity>
-        <activity android:name=".Profile.EditProfile">
-
-        </activity>
+        <activity android:name=".Search.SearchFilter"></activity>
+        <activity android:name=".Login.LoginActivity"></activity>
+        <activity android:name=".Profile.EditProfile"></activity>
         <activity android:name=".ShareActivity" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".ProfileActivity" />
@@ -32,7 +23,7 @@
             android:name=".HomeActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".Register.RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"
@@ -47,7 +38,13 @@
         <activity
             android:name=".ItemLists.ItemListActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Details.ItemDetailActivity"
             android:label="@string/title_item_detail"

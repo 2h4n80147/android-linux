@@ -1,12 +1,13 @@
-package com.zhaku.detailing
+package com.zhaku.detailing.Search
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.zhaku.detailing.R
 
-class RegisterActivity : AppCompatActivity() {
+class SearchFilter : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register)
+        setContentView(R.layout.activity_search_filter)
     }
 }
