@@ -1,4 +1,4 @@
-package com.zhaku.detailing
+package com.zhaku.detailing.ItemLists
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,7 +11,13 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.zhaku.detailing.Details.EducationCenterDetailFragment
+import com.zhaku.detailing.Details.ItemDetailActivity
+import com.zhaku.detailing.EdField
+import com.zhaku.detailing.EducationCenter
+import com.zhaku.detailing.R
 import com.zhaku.detailing.StudentContent.EducationCenterContent
+import com.zhaku.detailing.backendApiService
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.item_list.*
@@ -25,10 +31,15 @@ class ItemListFragment : Fragment() {
     var eduContent = EducationCenterContent.ITEMS
     private var twoPane: Boolean = false
     lateinit var recyclerView: RecyclerView
-
+    fun onstart() {
+        counter++
+        if (counter == 1)
+            getEducationContent()
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        counter++
+        onstart()
+
     }
 
     override fun onCreateView(
@@ -38,10 +49,10 @@ class ItemListFragment : Fragment() {
     ): View? {
 
         val rootView = inflater.inflate(R.layout.item_list, container, false)
-
         recyclerView = rootView.findViewById(R.id.item_list_recyclerview)
         recyclerView.setLayoutManager(LinearLayoutManager(getActivity()))
-        getEducationContent()
+
+        Log.d("isthistrue",(savedInstanceState!= null).toString())
 
         return rootView
     }
@@ -58,7 +69,7 @@ class ItemListFragment : Fragment() {
                     Log.d("eduContent", "education content is loaded with $it.size elements")
                     val list = it
 
-                    for (i in 0.. min(10-1,list.size-1)) {
+                    for (i in 0.. list.size-1) {
                         EducationCenterContent.addItem(list[i])
                     }
                     setupRecyclerView()
@@ -86,7 +97,12 @@ class ItemListFragment : Fragment() {
             )
     }
     fun setupRecyclerView() {
-        recyclerView.adapter = SimpleItemRecyclerViewAdapter(ItemListActivity(), eduContent , twoPane)
+        recyclerView.adapter =
+            SimpleItemRecyclerViewAdapter(
+                ItemListActivity(),
+                eduContent,
+                twoPane
+            )
         Log.d("adapter", "item count: ${recyclerView!!.adapter!!.itemCount}")
     }
     class SimpleItemRecyclerViewAdapter(

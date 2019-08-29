@@ -1,26 +1,9 @@
-package com.zhaku.detailing
+package com.zhaku.detailing.ItemLists
 
-import android.app.PendingIntent.getActivity
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.RecyclerView
-import android.view.LayoutInflater
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
-import com.bumptech.glide.Glide
-import com.zhaku.detailing.StudentContent.EducationCenterContent
-
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.activity_item_list.*
-import kotlinx.android.synthetic.main.item_list_content.view.*
-import kotlinx.android.synthetic.main.item_list.*
-import kotlin.math.max
-import kotlin.math.min
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.zhaku.detailing.R
 
 /**
  * An activity representing a list of Pings. This activity
@@ -46,10 +29,11 @@ class ItemListActivity : AppCompatActivity() {
 //            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                .setAction("Action", null).show()
 //        }
-        val fragment =  ItemListFragment()
+        val fragment = ItemListFragment()
         supportFragmentManager.beginTransaction()
             .add(R.id.fragment_container, fragment)
             .commit()
+        //val bottomBar: BottomNavigationView  = findViewById(R.id.bottom_bar)
 
     }
 

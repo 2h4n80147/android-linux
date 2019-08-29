@@ -1,7 +1,5 @@
-package com.zhaku.detailing.dummy
+package com.zhaku.detailing.Content
 
-import android.media.Image
-import kotlinx.android.synthetic.main.item_list_content.view.*
 import java.util.ArrayList
 import java.util.HashMap
 import com.zhaku.detailing.R

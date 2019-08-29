@@ -71,3 +71,26 @@ data class EdField(
     val id: Int,
     val name: String
 )
+data class Tutor(
+    val available: Boolean,
+    val ed_field: List<EdField>,
+    val id: Int,
+    val info: String,
+    val location: Location,
+    val max_amount: Int,
+    val min_amount: Int,
+    val phone_number: String,
+    val preferredPlace: String,
+    val profile_photos: List<ProfilePhoto>,
+    val sex: String,
+    val students: List<Student>,
+    val type: String,
+    val user: User
+)
+data class LoginAndPassword(
+    val username: String,
+    val password : String
+)
+data class Token(
+    val str : String
+)

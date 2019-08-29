@@ -22,24 +22,24 @@ class MainActivity : AppCompatActivity() {
 
         var t : TextView = findViewById(R.id.ttt)
         val apiService = backendApiService.createWithRx()
-        val student = apiService.getStudentById(16)
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-
-            .subscribe(object : SingleObserver<Student> {
-                override fun onSubscribe(d: Disposable) {
-                    // we'll come back to this in a moment
-                }
-
-                override fun onSuccess(person: Student) {
-
-                    // data is ready and we can update the UI
-                    t.text = person.toString()
-                }
-
-                override fun onError(e: Throwable) {
-                    // oops, we best show some error message
-                }
-            })
+//        val student = apiService.getStudentById(16)
+//            .subscribeOn(Schedulers.io())
+//            .observeOn(AndroidSchedulers.mainThread())
+//
+//            .subscribe(object : SingleObserver<Student> {
+//                override fun onSubscribe(d: Disposable) {
+//                    // we'll come back to this in a moment
+//                }
+//
+//                override fun onSuccess(person: Student) {
+//
+//                    // data is ready and we can update the UI
+//                    t.text = person.toString()
+//                }
+//
+//                override fun onError(e: Throwable) {
+//                    // oops, we best show some error message
+//                }
+//            })
     }
 }

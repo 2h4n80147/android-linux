@@ -12,17 +12,25 @@
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Login.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        <activity android:name=".ShareActivity"></activity>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+
+        </activity>
+        <activity android:name=".Profile.EditProfile">
+
+        </activity>
+        <activity android:name=".ShareActivity" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".LikesActivity" />
-
         <activity
             android:name=".HomeActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -37,24 +45,22 @@
             android:label="@string/title_activity_web_home_page"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ItemListActivity"
+            android:name=".ItemLists.ItemListActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".ItemDetailActivity"
+            android:name=".Details.ItemDetailActivity"
             android:label="@string/title_item_detail"
-            android:parentActivityName=".ItemListActivity"
+            android:parentActivityName=".ItemLists.ItemListActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.zhaku.detailing.ItemListActivity" />
+                android:value="com.zhaku.detailing.ItemLists.ItemListActivity" />
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

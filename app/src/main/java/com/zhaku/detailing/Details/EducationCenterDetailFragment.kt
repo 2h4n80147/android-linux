@@ -1,4 +1,4 @@
-package com.zhaku.detailing
+package com.zhaku.detailing.Details
 
 import android.os.Bundle
 import android.util.Log
@@ -9,13 +9,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.TransformationUtils.centerCrop
+import com.zhaku.detailing.EdField
+import com.zhaku.detailing.EducationCenter
+import com.zhaku.detailing.Locations
+import com.zhaku.detailing.R
 import com.zhaku.detailing.StudentContent.EducationCenterContent
-import com.zhaku.detailing.dummy.DummyContent
 import kotlinx.android.synthetic.main.activity_item_detail.*
-import kotlinx.android.synthetic.main.item_detail.*
-import kotlinx.android.synthetic.main.item_detail.view.*
-import org.w3c.dom.Text
 
 /**
  * A fragment representing a single Item detail screen.
@@ -42,6 +41,7 @@ class EducationCenterDetailFragment : Fragment() {
                 item = EducationCenterContent.ITEM_MAP[it.getString(ARG_ITEM_ID)]!!
 
                 activity?.detail_toolbar?.title = item.user.first_name
+
 
                 Log.d("oncreate", item.user.first_name)
         }
@@ -70,7 +70,7 @@ class EducationCenterDetailFragment : Fragment() {
             if (item.profile_photos.isNotEmpty()) {
                 Glide.with(rootView)
                     .load(item.profile_photos[0].picture.toString())
-                    .centerCrop()
+                    //.centerCrop()
                     .into(avatarView)
             }
 

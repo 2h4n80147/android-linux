@@ -1,31 +1,10 @@
 package com.zhaku.detailing.StudentContent
 
-import android.app.Activity
-import android.media.Image
-import android.net.Uri
-import android.util.Log
-import android.widget.LinearLayout
-import android.widget.Toast
-import androidx.lifecycle.MutableLiveData
-import com.google.android.material.snackbar.Snackbar
 import com.zhaku.detailing.*
-import kotlinx.android.synthetic.main.item_list_content.view.*
 import java.util.ArrayList
 import java.util.HashMap
-import com.zhaku.detailing.dummy.DummyContent
-import io.reactivex.SingleObserver
 import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import retrofit2.HttpException
-import java.net.HttpURLConnection
-import java.net.URL
-import java.net.URLConnection
-import java.security.AccessController.getContext
 
 
 object EducationCenterContent {

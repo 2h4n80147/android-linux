@@ -5,18 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".ItemDetailActivity"
+    tools:context=".Details.ItemDetailActivity"
     tools:ignore="MergeRootFrame">
-    <androidx.appcompat.widget.Toolbar
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:background="@drawable/white_grey_border_top"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:id="@+id/detail_toolbar">
+        android:layout_height="wrap_content">
 
-    </androidx.appcompat.widget.Toolbar>
+        <androidx.appcompat.widget.Toolbar
+
+            android:id="@+id/detail_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
     <ScrollView
+
+        android:layout_marginTop="?attr/actionBarSize"
         android:id="@+id/item_detail_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

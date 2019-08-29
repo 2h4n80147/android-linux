@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profile.EditProfile">
+    <ScrollView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/layout1">
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/edit_close"
+                    android:layout_gravity="left"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_clear_foreground" />
+
+                <ImageView
+                    android:id="@+id/edit_save"
+                    android:layout_gravity="right"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_check_foreground" />
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            <ImageView
+                android:id="@+id/edit_profile_photo"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_school_foreground"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/roboto"
+                android:text="Сменить фото профиля"
+                android:textSize="18sp"
+                android:textColor="@color/link_blue" />
+            <LinearLayout
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_body"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Название"
+                    android:textColor="@color/grey"
+
+                    />
+
+                <EditText
+                    android:id="@+id/edit_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ems="10"
+                    android:fontFamily="@font/roboto"
+                    android:inputType="textPersonName"
+                    android:text="Name" />
+                <TextView
+
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:text=" Имя пользователя"
+                    />
+                <EditText
+                    android:id="@+id/edit_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto"
+                    android:text="user-login123" />
+                <TextView
+
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" О себе"
+
+                    android:fontFamily="@font/roboto"
+                    />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edit_detail_info"
+                    android:fontFamily="@font/roboto"
+                    android:text="Connectin people foreducation.\n I love cheese \nКачества образование"/>
+                <TextView
+
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/roboto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Эл. адрес"/>
+                <EditText
+
+                    android:fontFamily="@font/roboto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:text="lalal@gmail.com"
+                    android:id="@+id/edit_email"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Номер телефона"
+                    android:fontFamily="@font/roboto"
+                    />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:fontFamily="@font/roboto"
+                    android:textStyle="bold"
+                    android:text="+77777777777"
+                    android:id="@+id/edit_phone"
+                    />
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  Пол"
+                    android:fontFamily="@font/roboto"
+                    />
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edit_sex_spinner"
+                    android:entries="@array/SexList"
+                    />
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Сфера образования"
+                    />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        style="@style/Widget.MaterialComponents.Chip.Entry"
+                        />
+                </com.google.android.material.chip.ChipGroup>
+
+<!--                <HorizontalScrollView-->
+<!--                    android:visibility="gone"-->
+<!--                    android:id="@+id/chipGroup2HorizontalView"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="8dp"-->
+<!--                    android:layout_marginTop="16dp"-->
+<!--                    android:scrollbars="none"-->
+<!--                    app:layout_constraintVertical_bias="0.62">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center_vertical"-->
+<!--                        android:orientation="horizontal">-->
+
+<!--                        <androidx.appcompat.widget.AppCompatTextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="Предметы: " />-->
+
+<!--                        <com.google.android.material.chip.ChipGroup-->
+<!--                            android:id="@+id/chipGroup2"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:duplicateParentState="false">-->
+
+<!--                        </com.google.android.material.chip.ChipGroup>-->
+
+<!--                        <com.google.android.material.textfield.TextInputLayout-->
+<!--                            android:id="@+id/textInputLayout"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="43dp"-->
+<!--                            android:layout_marginStart="8dp"-->
+<!--                            android:layout_marginEnd="8dp"-->
+<!--                            android:layout_marginBottom="5dp"-->
+<!--                            android:minWidth="32dp"-->
+<!--                            android:visibility="visible"-->
+<!--                            app:layout_constraintEnd_toEndOf="parent"-->
+<!--                            app:layout_constraintStart_toEndOf="@id/chipGroup2HorizontalView"-->
+<!--                            app:layout_constraintTop_toTopOf="parent"-->
+<!--                            app:layout_constraintWidth_min="32dp">-->
+
+<!--                            <androidx.appcompat.widget.AppCompatEditText-->
+<!--                                android:id="@+id/etValue"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:background="@android:color/transparent"-->
+<!--                                android:imeOptions="actionDone"-->
+<!--                                android:maxLines="1"-->
+<!--                                android:singleLine="true" />-->
+
+<!--                        </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--                    </LinearLayout>-->
+
+
+<!--                </HorizontalScrollView>-->
+
+                <CheckBox
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Доступен"
+                    android:fontFamily="@font/roboto"
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
