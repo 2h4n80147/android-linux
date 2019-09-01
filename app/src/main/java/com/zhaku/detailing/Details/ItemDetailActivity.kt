@@ -16,8 +16,10 @@ import com.zhaku.detailing.R
  * in a [ItemListActivity].
  */
 class ItemDetailActivity : AppCompatActivity() {
-
+    val TAG = "ITEMDETAILACTIVITY"
     override fun onCreate(savedInstanceState: Bundle?) {
+        Log.d("oncreate", TAG)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_item_detail)
         val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.detail_toolbar)

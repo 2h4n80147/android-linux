@@ -118,4 +118,11 @@
         <item>Нур-султан / Астана </item>
         <item>Шымкент</item>
     </string-array>
+    <string-array name="city2">
+        <item> </item>
+        <item>Алматы</item>
+        <item>Нур-султан / Астана </item>
+        <item>Шымкент</item>
+        <item>Любой</item>
+    </string-array>
 </resources>

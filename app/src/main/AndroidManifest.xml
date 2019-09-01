@@ -9,11 +9,16 @@
         android:allowBackup="true"
         android:icon="@drawable/icon"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/icon"
+        android:roundIcon="@drawable/bilimdelion_hand"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Search.SearchFilter"></activity>
-        <activity android:name=".Login.LoginActivity"></activity>
+        <activity android:name=".Login.LoginActivity"
+
+            android:theme="@style/AppTheme.NoActionBar">
+
+
+        </activity>
         <activity android:name=".Profile.EditProfile"></activity>
         <activity android:name=".ShareActivity" />
         <activity android:name=".SearchActivity" />
@@ -39,11 +44,13 @@
             android:name=".ItemLists.ItemListActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".Details.ItemDetailActivity"

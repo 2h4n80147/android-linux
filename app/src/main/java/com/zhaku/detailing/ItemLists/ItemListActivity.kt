@@ -1,6 +1,7 @@
 package com.zhaku.detailing.ItemLists
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.zhaku.detailing.R
@@ -16,11 +17,13 @@ import com.google.android.material.navigation.NavigationView
 import com.zhaku.detailing.Search.SearchFragment
 import kotlinx.android.synthetic.main.activity_item_list.*
 import android.view.ViewGroup
-import javax.swing.UIManager.put
 import android.util.SparseArray
+import android.view.Menu
+import android.view.MenuItem
 import androidx.fragment.app.FragmentPagerAdapter
-import android.R
+
 import androidx.fragment.app.FragmentManager
+import com.zhaku.detailing.Profile.ProfileFragment
 import java.lang.ref.WeakReference
 
 
@@ -38,26 +41,27 @@ class ItemListActivity : AppCompatActivity() {
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
      * device.
      */
+    val TAG = "ItemListActivity"
     val navController by lazy { findNavController(R.id.my_nav_host_fragment) }
     val bottomBar by lazy { findViewById<BottomNavigationView>(R.id.bottom_bar) }
+    val fragments = ArrayList<Fragment> ()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        Log.d("oncreate", TAG)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_item_list)
-
+        bottomBar.setupWithNavController(navController)
 //
 //        fab.setOnClickListener { view ->
 //            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                .setAction("Action", null).show()
 //        }
-//        val fragment = ItemListFragment()
-//        supportFragmentManager.beginTransaction()
-//            .add(R.id.fragment_container, fragment)
-//            .commit()
 
-        bottomBar.setupWithNavController(navController)
+    }
 
-        //findNavController().navigate(R.id.item_list)
+}
+
 
 //
 //        bottomBar.setOnNavigationItemSelectedListener{
@@ -81,50 +85,48 @@ class ItemListActivity : AppCompatActivity() {
 //
 //            return@setOnNavigationItemSelectedListener true
 //        }
-    }
-}
-
-    private class ViewPagerAdapter internal constructor(manager: FragmentManager) :
-        FragmentPagerAdapter(manager) {
-        private val instantiatedFragments = SparseArray<WeakReference<Fragment>>()
-        private val mFragmentList = ArrayList()
-        private val mFragmentTitleList = ArrayList()
-
-        override fun getItem(position: Int): Fragment {
-            return mFragmentList.get(position)
-        }
-
-        override fun getCount(): Int {
-            return mFragmentList.size
-        }
-
-        internal fun addFragment(fragment: Fragment, title: String) {
-            mFragmentList.add(fragment)
-            mFragmentTitleList.add(title)
-        }
-
-        override fun instantiateItem(container: ViewGroup, position: Int): Any {
-            val fragment = super.instantiateItem(container, position) as Fragment
-            instantiatedFragments.put(position, WeakReference(fragment))
-            return fragment
-        }
-
-        override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
-            instantiatedFragments.remove(position)
-            super.destroyItem(container, position, `object`)
-        }
-
-        internal fun getFragment(position: Int): Fragment? {
-            val wr = instantiatedFragments.get(position)
-            return if (wr != null) {
-                wr!!.get()
-            } else {
-                null
-            }
-        }
-
-        override fun getPageTitle(position: Int): CharSequence? {
-            return mFragmentTitleList.get(position)
-        }
-
-}
+//    private class ViewPagerAdapter internal constructor(manager: FragmentManager) :
+//        FragmentPagerAdapter(manager) {
+//        private val instantiatedFragments = SparseArray<WeakReference<Fragment>>()
+//
+//        private val mFragmentList = ArrayList<Fragment>()
+//        private val mFragmentTitleList = ArrayList<String>()
+//
+//        override fun getItem(position: Int): Fragment {
+//            return mFragmentList.get(position)
+//        }
+//
+//        override fun getCount(): Int {
+//            return mFragmentList.size
+//        }
+//
+//        internal fun addFragment(fragment: Fragment, title: String) {
+//            mFragmentList.add(fragment)
+//            mFragmentTitleList.add(title)
+//        }
+//
+//        override fun instantiateItem(container: ViewGroup, position: Int): Any {
+//            val fragment = super.instantiateItem(container, position) as Fragment
+//            instantiatedFragments.put(position, WeakReference(fragment))
+//            return fragment
+//        }
+//
+//        override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
+//            instantiatedFragments.remove(position)
+//            super.destroyItem(container, position, `object`)
+//        }
+//
+//        internal fun getFragment(position: Int): Fragment? {
+//            val wr = instantiatedFragments.get(position)
+//            return if (wr != null) {
+//                wr!!.get()
+//            } else {
+//                null
+//            }
+//        }
+//
+//        override fun getPageTitle(position: Int): CharSequence? {
+//            return mFragmentTitleList.get(position)
+//        }
+//
+//}

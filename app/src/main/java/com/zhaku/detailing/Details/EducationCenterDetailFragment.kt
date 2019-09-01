@@ -27,10 +27,12 @@ class EducationCenterDetailFragment : Fragment() {
     /**
      * The dummy content this fragment is presenting.
      */
+    val TAG = "EducationCenterDetailFragment"
     lateinit var item : EducationCenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d("oncreate", TAG)
 
         arguments?.let {
 

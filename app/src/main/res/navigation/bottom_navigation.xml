@@ -3,27 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/bottom_navigation"
-    app:startDestination="@id/ic_home">
+    app:startDestination="@id/navigation_home">
     <fragment
-        android:id="@+id/ic_home"
+        android:id="@+id/navigation_home"
         android:name="com.zhaku.detailing.ItemLists.ItemListFragment"
         android:label="ItemListFragment" />
     <activity
-        android:id="@+id/ic_alert"
+        android:id="@+id/navigation_login"
         android:name="com.zhaku.detailing.Login.LoginActivity"
         android:label="activity_login"
         tools:layout="@layout/activity_login" />
     <fragment
-        android:id="@+id/ic_search"
+        android:id="@+id/navigation_search"
         android:name="com.zhaku.detailing.Search.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" >
     </fragment>
-    <activity
-        android:id="@+id/editProfile"
-        android:name="com.zhaku.detailing.Profile.EditProfile"
-        android:label="activity_edit_profile"
-        tools:layout="@layout/activity_edit_profile" />
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.zhaku.detailing.Profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/profile_view"
+        >
+    </fragment>
+
     <activity
         android:id="@+id/searchFilter"
         android:name="com.zhaku.detailing.Search.SearchFilter"

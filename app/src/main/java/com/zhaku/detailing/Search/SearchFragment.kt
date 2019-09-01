@@ -1,6 +1,7 @@
 package com.zhaku.detailing.Search
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -39,19 +40,26 @@ class SearchFragment : Fragment() {
 //            param2 = it.getString(ARG_PARAM2)
 //        }
 //    }
-
+    val TAG = "SearchFragment"
+    lateinit var viewPager : ViewPager
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Log.d("oncreate", TAG)
         // Inflate the layout for this fragment
         val root = inflater.inflate(R.layout.fragment_search, container, false)
-        val viewPager = root.findViewById<ViewPager>(R.id.viewPager)
+         viewPager = root.findViewById<ViewPager>(R.id.viewPager)
+        setupViewPager()
+
+        return root
+    }
+    fun setupViewPager() {
         viewPager.setAdapter(
             SampleFragmentPagerAdapter(childFragmentManager)
         )
 
-        return root
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event

@@ -15,7 +15,7 @@
 
     <style name="BottomNavigationTheme" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">@color/active_tab_color</item>
-        <item name="android:textColorSecondary">@color/inactive_tab_color</item>
+        <item name="android:textColorSecondary">@color/active_tab_color</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

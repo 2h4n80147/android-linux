@@ -25,7 +25,7 @@ interface backendApiService {
     fun getTutorById(@Path("id") id : Int): Single<Tutor>
 
     @GET("customers/students/")
-    fun getStudentList() : Response<List<Student>>
+    fun getStudentList() : Observable<List<Student>>
     @GET("customers/education_centers/")
     fun getEducationCenterList() : Observable<List<EducationCenter> >
     @GET("customers/tutors/")
@@ -35,12 +35,15 @@ interface backendApiService {
     fun updateStudent(@Path("id") id : Int, @Body student : Student)
 
     @POST("api-token-auth/")
-    fun getAuthToken(@Body log : LoginAndPassword) : Single<String>
+    fun getAuthToken(@Body log : LoginAndPassword) : Single<Any>
 
     @GET("customers/students")
     fun queryOnCity(@Query("city") city : String) : Observable<List<Student>>
-    //@POST("customers/students")
-    //fun registerStudent(@Body(""))
+    @POST("customers/students")
+    fun registerStudent(@Body user : Student) : Single<Student>
+
+
+
     /**
      * Companion object to create the apiService
      */
@@ -49,7 +52,7 @@ interface backendApiService {
             val retrofit = Retrofit.Builder()
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("https://bilimdelion-backend.herokuapp.com/")
+                .baseUrl("https://bilimdelion-backup-server.herokuapp.com/")
                 .build()
 
             return retrofit.create(backendApiService::class.java)

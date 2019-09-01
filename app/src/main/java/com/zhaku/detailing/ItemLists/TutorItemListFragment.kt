@@ -24,37 +24,22 @@ import kotlinx.android.synthetic.main.item_list.*
 import kotlinx.android.synthetic.main.item_list_content.view.*
 import kotlin.math.min
 
-class ItemListFragment(contentiiid : Int): Fragment() {
+class TutorItemListFragment(contentiiid : Int): Fragment() {
     val contentId by lazy { contentiiid}
 
     val TAG = "ItemListFragment"
     var counter = 0
 
-     var content = EducationCenterContent.ITEMS
+     var content = TutorContent.ITEMS
 
     private var twoPane: Boolean = false
     lateinit var recyclerView: RecyclerView
 
-
-//
-//    fun callContent() : Any {
-//
-//        if (contentId == 0)
-//            return content as MutableList<*>
-//
-//        if (contentId == 1)
-//            return content as MutableList<*>
-//        if (contentId == 2)
-//            return content as MutableList<*>
-//
-//    }
-
-
-    fun getEducationContent() {
-        if (EducationCenterContent.ITEMS.isNotEmpty())
+    fun getTutorContent() {
+        if (TutorContent.ITEMS.isNotEmpty())
             return
         val apiService = backendApiService.createWithRx()
-        var res = apiService.getEducationCenterList()
+        var res = apiService.getTutorList()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .take(10)
@@ -64,9 +49,9 @@ class ItemListFragment(contentiiid : Int): Fragment() {
                     val list = it
 
                     for (i in 0.. list.size-1) {
-                        EducationCenterContent.addItem(list[i])
+                        TutorContent.addItem(list[i])
                     }
-                    content = EducationCenterContent.ITEMS
+                    content = TutorContent.ITEMS
                     //setupRecyclerView()
                 },
                 {
@@ -75,9 +60,8 @@ class ItemListFragment(contentiiid : Int): Fragment() {
             )
     }
 
-
     fun getContent() {
-        getEducationContent()
+        getTutorContent()
     }
 
 
@@ -100,24 +84,7 @@ class ItemListFragment(contentiiid : Int): Fragment() {
         return rootView
     }
 
-    fun getEducationSample() {
-        var id = 7
-        val apiService = backendApiService.createWithRx()
-        var res = apiService.getEducationCenterById(id)
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(
-                {
-                    if (content.isNotEmpty() && content[0] is EducationCenter)
-                        content.add(it as EducationCenter)
 
-                    setupRecyclerView()
-                },
-                {
-
-                }
-            )
-    }
     fun setupRecyclerView() {
         recyclerView.adapter =
             SimpleItemRecyclerViewAdapter(
@@ -129,7 +96,7 @@ class ItemListFragment(contentiiid : Int): Fragment() {
     }
     class SimpleItemRecyclerViewAdapter(
         private val parentActivity: ItemListActivity,
-        private val values: MutableList<EducationCenter>,
+        private val values: MutableList<Tutor>,
         private val twoPane: Boolean
     ) :
         RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder>() {

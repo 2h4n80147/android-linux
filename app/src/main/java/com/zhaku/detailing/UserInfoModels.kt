@@ -91,6 +91,11 @@ data class LoginAndPassword(
     val username: String,
     val password : String
 )
+data class LoginResult (
+    val username: String,
+    val password : String,
+    val token : String
+)
 data class Token(
     val str : String
 )

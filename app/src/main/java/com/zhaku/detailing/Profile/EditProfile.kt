@@ -20,9 +20,14 @@ class EditProfile : AppCompatActivity() {
 
     //var EduField_chipg_group: ChipGroup = findViewById(R.id.edu_field_chip_group)
     lateinit var User : globalUser
+    val TAG = "EditProfile"
     override fun onCreate(savedInstanceState: Bundle?) {
+        Log.d("oncreate", TAG)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_profile)
+
+
+
         val name = findViewById<EditText>(R.id.edit_name)
 
         val username = findViewById<EditText>(R.id.edit_username)

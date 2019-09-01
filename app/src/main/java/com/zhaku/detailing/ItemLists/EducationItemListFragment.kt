@@ -24,35 +24,23 @@ import kotlinx.android.synthetic.main.item_list.*
 import kotlinx.android.synthetic.main.item_list_content.view.*
 import kotlin.math.min
 
-class ItemListFragment(contentiiid : Int): Fragment() {
-    val contentId by lazy { contentiiid}
+class EducationItemListFragment: Fragment() {
 
     val TAG = "ItemListFragment"
     var counter = 0
 
-     var content = EducationCenterContent.ITEMS
+    var content = EducationCenterContent.ITEMS
 
     private var twoPane: Boolean = false
     lateinit var recyclerView: RecyclerView
 
 
-//
-//    fun callContent() : Any {
-//
-//        if (contentId == 0)
-//            return content as MutableList<*>
-//
-//        if (contentId == 1)
-//            return content as MutableList<*>
-//        if (contentId == 2)
-//            return content as MutableList<*>
-//
-//    }
-
 
     fun getEducationContent() {
-        if (EducationCenterContent.ITEMS.isNotEmpty())
+        if (EducationCenterContent.ITEMS.isNotEmpty()) {
+            content = EducationCenterContent.ITEMS
             return
+        }
         val apiService = backendApiService.createWithRx()
         var res = apiService.getEducationCenterList()
             .subscribeOn(Schedulers.io())
@@ -75,9 +63,9 @@ class ItemListFragment(contentiiid : Int): Fragment() {
             )
     }
 
-
     fun getContent() {
-        getEducationContent()
+            getEducationContent()
+
     }
 
 
