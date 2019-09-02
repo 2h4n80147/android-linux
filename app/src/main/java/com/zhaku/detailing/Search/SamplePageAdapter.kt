@@ -19,7 +19,7 @@ class SampleFragmentPagerAdapter(fm: FragmentManager) :
     FragmentPagerAdapter(fm) {
     internal val PAGE_COUNT = 3
     private val tabTitles = arrayOf("Оброзовательный центр", "Репетитор", "Ученик")
-    var fragments = arrayListOf<Fragment>(ListFragment(0), ListFragment(1), ListFragment(2))
+    //var fragments = arrayListOf<Fragment>(ListFragment(0), ListFragment(1), ListFragment(2))
 
 
     override fun getCount(): Int {

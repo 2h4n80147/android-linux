@@ -19,8 +19,9 @@ class SecondStep : Fragment() {
     ): View? {
         val rootView = inflater.inflate(R.layout.registration_second_step, container,false)
         with(rootView) {
-            cityChoice = findViewById(R.id.reg_city_choice
+            cityChoice = findViewById(R.id.reg_city_choice)
 
         }
+        return rootView
     }
 }

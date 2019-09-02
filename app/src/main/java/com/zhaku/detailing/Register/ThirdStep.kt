@@ -18,5 +18,6 @@ class ThirdStep : Fragment() {
     ): View? {
         val rootView = inflater.inflate(R.layout.registration_third_step, container,false)
 
+        return rootView
     }
 }

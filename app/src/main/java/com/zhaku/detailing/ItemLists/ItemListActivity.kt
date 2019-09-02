@@ -23,6 +23,7 @@ import android.view.MenuItem
 import androidx.fragment.app.FragmentPagerAdapter
 
 import androidx.fragment.app.FragmentManager
+import com.zhaku.detailing.HomeFragment
 import com.zhaku.detailing.Profile.ProfileFragment
 import java.lang.ref.WeakReference
 
@@ -51,7 +52,10 @@ class ItemListActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_item_list)
-        bottomBar.setupWithNavController(navController)
+        val f = HomeFragment()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.my_nav_host_fragment, f).commit()
+        //bottomBar.setupWithNavController(navController)
 //
 //        fab.setOnClickListener { view ->
 //            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -103,7 +107,6 @@ class ItemListActivity : AppCompatActivity() {
 //        internal fun addFragment(fragment: Fragment, title: String) {
 //            mFragmentList.add(fragment)
 //            mFragmentTitleList.add(title)
-//        }
 //
 //        override fun instantiateItem(container: ViewGroup, position: Int): Any {
 //            val fragment = super.instantiateItem(container, position) as Fragment

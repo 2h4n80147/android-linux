@@ -20,7 +20,11 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
         Log.d("oncreate", TAG)
-
+        var f = FirstStep()
+        supportFragmentManager.
+            beginTransaction().
+            replace(R.id.reg_host_fragment, f)
+            .commit()
 
     }
 //    fun validatefields()

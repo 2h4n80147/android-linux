@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
@@ -27,31 +28,50 @@
 
     </androidx.viewpager.widget.ViewPager>
 
-    <LinearLayout
-        android:gravity="end"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+<!--    <?xml version="1.0" encoding="utf-8"?>-->
+<!--    <LinearLayout -->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:background="#E9E5DC"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
+<!--        tools:showIn="@layout/activity_main">-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Фильтр"
-            android:textColor="@color/black"
-            android:textStyle="bold"
+<!--        <Button-->
+<!--            android:id="@+id/btn_bottom_sheet"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:background="@color/colorPrimary"-->
+<!--            android:paddingLeft="16dp"-->
+<!--            android:paddingRight="16dp"-->
+<!--            android:text="Show Bottom Sheet"-->
+<!--            android:textColor="@color/white" />-->
 
-            />
+<!--        <Button-->
+<!--            android:id="@+id/btn_bottom_sheet_dialog"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:text="Show Bottom Sheet Dialog"-->
+<!--            android:visibility="gone" />-->
 
-        <ImageView
-            android:layout_marginLeft="10dp"
-            android:padding="1dp"
-            android:layout_gravity="right"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/filter_options"/>
+<!--        <Button-->
+<!--            android:id="@+id/btn_bottom_sheet_dialog_fragment"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:text="Show Bottom Sheet Dialog Fragment"-->
+<!--            android:visibility="gone" />-->
 
-    </LinearLayout>
+<!--    </LinearLayout>-->
+
+    <include
+        layout="@layout/bottom_bar_sheet" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

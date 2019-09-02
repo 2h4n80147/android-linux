@@ -63,7 +63,6 @@
                android:textSize="20sp"
                />
            <RadioGroup
-               align
                android:layout_marginStart="50dp"
 
                android:layout_width="match_parent"

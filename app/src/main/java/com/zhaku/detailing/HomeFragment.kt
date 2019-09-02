@@ -5,13 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import kotlinx.android.synthetic.main.bottom_bar_sheet.*
 
 
 class HomeFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val rootview = inflater.inflate(R.layout.fragment_home, container, false)
+        var bottomSheetBehavior = BottomSheetBehavior.from(bottom_sheet)
+        return rootview
 
-        return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
     companion object {

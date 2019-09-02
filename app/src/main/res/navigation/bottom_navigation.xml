@@ -6,8 +6,8 @@
     app:startDestination="@id/navigation_home">
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.zhaku.detailing.ItemLists.ItemListFragment"
-        android:label="ItemListFragment" />
+        android:name="com.zhaku.detailing.ItemLists.EducationItemListFragment"
+        android:label="EducationListFragment" />
     <activity
         android:id="@+id/navigation_login"
         android:name="com.zhaku.detailing.Login.LoginActivity"
