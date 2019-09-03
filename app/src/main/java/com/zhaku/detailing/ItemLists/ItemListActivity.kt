@@ -52,10 +52,9 @@ class ItemListActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_item_list)
-        val f = HomeFragment()
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.my_nav_host_fragment, f).commit()
-        //bottomBar.setupWithNavController(navController)
+
+
+        bottomBar.setupWithNavController(navController)
 //
 //        fab.setOnClickListener { view ->
 //            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)

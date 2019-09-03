@@ -1,77 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
+
     tools:context=".Search.SearchFragment">
 
-
-    <TableLayout
-        android:id="@+id/tabLayout"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="?actionBarSize"
-        app:tabGravity="fill"
-        app:tabIndicatorColor="@color/white"
-        app:tabIndicatorHeight="4dp"
-        app:tabBackground="@color/colorPrimary"
-        app:tabMode="fixed">
+        >
 
-    </TableLayout>
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewPager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        <com.google.android.material.tabs.TabLayout
+            app:tabIconTint="@color/black"
+            app:tabTextColor="@color/black"
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?actionBarSize"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="@color/black"
+            app:tabIndicatorHeight="1dp"
+            app:tabBackground="@color/white"
+            app:tabMode="fixed">
 
-    </androidx.viewpager.widget.ViewPager>
+        </com.google.android.material.tabs.TabLayout>
+        <LinearLayout
+            android:id="@+id/search_icons"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            >
 
-<!--    <?xml version="1.0" encoding="utf-8"?>-->
-<!--    <LinearLayout -->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:background="#E9E5DC"-->
-<!--        android:orientation="vertical"-->
-<!--        app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
-<!--        tools:showIn="@layout/activity_main">-->
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
 
-<!--        <Button-->
-<!--            android:id="@+id/btn_bottom_sheet"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center_horizontal"-->
-<!--            android:layout_marginTop="16dp"-->
-<!--            android:background="@color/colorPrimary"-->
-<!--            android:paddingLeft="16dp"-->
-<!--            android:paddingRight="16dp"-->
-<!--            android:text="Show Bottom Sheet"-->
-<!--            android:textColor="@color/white" />-->
+                >
+                <ImageView
+                    android:layout_gravity="top|right"
+                    android:layout_height="20dp"
+                    android:layout_width="20dp"
+                    android:src="@drawable/ic_school_foreground"
+                    />
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-<!--        <Button-->
-<!--            android:id="@+id/btn_bottom_sheet_dialog"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center_horizontal"-->
-<!--            android:layout_marginTop="16dp"-->
-<!--            android:text="Show Bottom Sheet Dialog"-->
-<!--            android:visibility="gone" />-->
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
 
-<!--        <Button-->
-<!--            android:id="@+id/btn_bottom_sheet_dialog_fragment"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center_horizontal"-->
-<!--            android:layout_marginTop="16dp"-->
-<!--            android:text="Show Bottom Sheet Dialog Fragment"-->
-<!--            android:visibility="gone" />-->
+                >
+                <ImageView
+                    android:layout_gravity="top|right"
+                    android:layout_height="20dp"
+                    android:layout_width="20dp"
+                    android:src="@drawable/tutor"
+                    />
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
 
-<!--    </LinearLayout>-->
-
-    <include
-        layout="@layout/bottom_bar_sheet" />
+                >
+                <ImageView
+                    android:layout_gravity="top|right"
+                    android:layout_height="20dp"
+                    android:layout_width="20dp"
+                    android:src="@drawable/student"
+                    />
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        </LinearLayout>
 
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:layout_marginTop="?attr/actionBarSize"
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </androidx.viewpager.widget.ViewPager>
+    </FrameLayout>
+</RelativeLayout>

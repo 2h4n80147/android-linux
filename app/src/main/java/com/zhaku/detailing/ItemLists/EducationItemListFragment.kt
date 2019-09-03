@@ -55,7 +55,8 @@ class EducationItemListFragment: Fragment() {
                         EducationCenterContent.addItem(list[i])
                     }
                     content = EducationCenterContent.ITEMS
-                    //setupRecyclerView()
+
+                        recyclerView.adapter?.notifyDataSetChanged()
                 },
                 {
                     Log.d("error","throwable: $it")
@@ -96,7 +97,7 @@ class EducationItemListFragment: Fragment() {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 {
-                    if (content.isNotEmpty() && content[0] is EducationCenter)
+                    if (content.isNotEmpty())
                         content.add(it as EducationCenter)
 
                     setupRecyclerView()

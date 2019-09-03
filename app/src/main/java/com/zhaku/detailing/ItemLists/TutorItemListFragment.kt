@@ -12,10 +12,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.zhaku.detailing.*
-import com.zhaku.detailing.Details.EducationCenterDetailFragment
 import com.zhaku.detailing.Details.ItemDetailActivity
+import com.zhaku.detailing.Details.TutorDetailFragment
 
-import com.zhaku.detailing.StudentContent.EducationCenterContent
 import com.zhaku.detailing.StudentContent.StudentContent
 import com.zhaku.detailing.StudentContent.TutorContent
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -24,8 +23,7 @@ import kotlinx.android.synthetic.main.item_list.*
 import kotlinx.android.synthetic.main.item_list_content.view.*
 import kotlin.math.min
 
-class TutorItemListFragment(contentiiid : Int): Fragment() {
-    val contentId by lazy { contentiiid}
+class TutorItemListFragment: Fragment() {
 
     val TAG = "ItemListFragment"
     var counter = 0
@@ -37,7 +35,10 @@ class TutorItemListFragment(contentiiid : Int): Fragment() {
 
     fun getTutorContent() {
         if (TutorContent.ITEMS.isNotEmpty())
+        {
+            content = TutorContent.ITEMS
             return
+        }
         val apiService = backendApiService.createWithRx()
         var res = apiService.getTutorList()
             .subscribeOn(Schedulers.io())
@@ -45,14 +46,17 @@ class TutorItemListFragment(contentiiid : Int): Fragment() {
             .take(10)
             .subscribe(
                 {
-                    Log.d("eduContent", "education content is loaded with $it.size elements")
+                    Log.d("content", "Tutor content is loaded with $it.size elements")
                     val list = it
 
                     for (i in 0.. list.size-1) {
                         TutorContent.addItem(list[i])
                     }
+                    var before = TutorContent.ITEMS.size
                     content = TutorContent.ITEMS
-                    //setupRecyclerView()
+                    var after = TutorContent.ITEMS.size
+
+                    recyclerView.adapter?.notifyDataSetChanged()
                 },
                 {
                     Log.d("error","throwable: $it")
@@ -105,20 +109,20 @@ class TutorItemListFragment(contentiiid : Int): Fragment() {
 
         init {
             onClickListener = View.OnClickListener { v ->
-                val item = v.tag as EducationCenter
+                val item = v.tag as Tutor
                 if (twoPane) {
-                    val fragment = EducationCenterDetailFragment().apply {
+                    val fragment = TutorDetailFragment().apply {
                         arguments = Bundle().apply {
-                            putString(EducationCenterDetailFragment.ARG_ITEM_ID, item.id.toString())
+                            putString(TutorDetailFragment.ARG_ITEM_ID, item.id.toString())
                         }
                     }
                     parentActivity.supportFragmentManager
                         .beginTransaction()
-                        .replace(R.id.item_detail_container, fragment)
+                        .replace(R.id.my_nav_host_fragment, fragment)
                         .commit()
                 } else {
                     val intent = Intent(v.context, ItemDetailActivity::class.java).apply {
-                        putExtra(EducationCenterDetailFragment.ARG_ITEM_ID, item.id.toString())
+                        putExtra(TutorDetailFragment.ARG_ITEM_ID, item.id.toString())
                     }
                     v.context.startActivity(intent)
                 }
@@ -151,7 +155,7 @@ class TutorItemListFragment(contentiiid : Int): Fragment() {
                     .into(holder.profileimgView)
             }
             else
-                holder.profileimgView.setImageResource(R.drawable.ic_school_foreground)
+                holder.profileimgView.setImageResource(R.drawable.tutor)
 
             with(holder.itemView) {
                 tag = item

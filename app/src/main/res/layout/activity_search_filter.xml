@@ -147,7 +147,7 @@
             android:textColor="@color/white"
 
 
-            android:background="@drawable/rounded_button"/>
+            android:background="@drawable/blue_rounded_button"/>
 
         <TextView
             android:id="@+id/search_clear"

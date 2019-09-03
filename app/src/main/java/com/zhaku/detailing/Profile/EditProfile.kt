@@ -45,7 +45,7 @@ class EditProfile : AppCompatActivity() {
         }
         saveButton.setOnClickListener{
             saveaAlldata()
-
+            finish()
         }
     }
     fun saveaAlldata() {

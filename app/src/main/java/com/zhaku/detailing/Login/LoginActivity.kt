@@ -1,27 +1,21 @@
 package com.zhaku.detailing.Login
 
-import android.app.ProgressDialog.show
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.Gravity
 import android.widget.*
-import androidx.appcompat.widget.AppCompatButton
-import androidx.core.view.isVisible
 import com.zhaku.detailing.LoginAndPassword
 import com.zhaku.detailing.R
 import com.zhaku.detailing.backendApiService
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
-import io.reactivex.SingleObserver
-import kotlinx.android.synthetic.main.login_form2.*
-import retrofit2.adapter.rxjava2.Result.response
-import com.google.gson.Gson
 import com.zhaku.detailing.ItemLists.ItemListActivity
-import com.zhaku.detailing.MainActivity
+import com.zhaku.detailing.Profile.Info
 import com.zhaku.detailing.Register.RegisterActivity
 
 
@@ -29,10 +23,8 @@ import com.zhaku.detailing.Register.RegisterActivity
 
 class LoginActivity : AppCompatActivity() {
     val TAG = "LoginActivity"
-    lateinit var headerAuth : String
 
     lateinit var progressBar : ProgressBar
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d("oncreate", TAG)
@@ -42,15 +34,28 @@ class LoginActivity : AppCompatActivity() {
         val password = findViewById<TextInputEditText>(R.id.input_password)
         progressBar = findViewById(R.id.progressbar_login)
 
-        val btn2 = findViewById<Button>(R.id.btn_login)
+        val login_button = findViewById<Button>(R.id.btn_login)
         val registerButton = findViewById<TextView>(R.id.link_signup)
 
         username.setText("Bek")
         password.setText("bek")
+        username.addTextChangedListener(  object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
 
-        btn2.setOnClickListener {
-            progressBar.setVisibility(ProgressBar.VISIBLE);
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
 
+            override fun afterTextChanged(p0: Editable?) {
+                if (username.text.toString() != "" && password.text.toString() != "")
+                    login_button.isEnabled = true
+            }
+        })
+
+        login_button.setOnClickListener {
+            progressBar.setVisibility(ProgressBar.VISIBLE)
             login(username.text.toString(), password.text.toString())
         }
         registerButton.setOnClickListener{
@@ -69,7 +74,7 @@ class LoginActivity : AppCompatActivity() {
             .subscribe(
                 {
 
-                    headerAuth = it.toString()
+                    Info.authToken = it.toString()
                     val intent = Intent(this@LoginActivity, ItemListActivity::class.java)
                     startActivity(intent)
 
@@ -78,6 +83,7 @@ class LoginActivity : AppCompatActivity() {
                 }
             ,
                 {
+                    //AlertDialog.Builder(MainActivity)
                     Log.d("login","fail")
                     var toast : Toast = Toast.makeText(getApplicationContext(),
                         "Не удалось зайти, попробуйте заново", Toast.LENGTH_LONG)

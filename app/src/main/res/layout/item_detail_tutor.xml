@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/white_grey_border_top"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+
+        android:background="@drawable/white_grey_border_top"
+        android:id="@+id/tutor_item_detail"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+
+        <ImageView
+            android:layout_height="200dp"
+            android:layout_width="200dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/tutor_detaiL_profile_image"
+
+            android:src="@drawable/tutor" />
+
+        <LinearLayout
+            android:background="@drawable/grey_border_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_marginTop="10dp"
+
+                android:padding="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Образовательный центр: "/>
+                <TextView
+
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tutor_name"
+                    android:text="KKKK"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:padding="10dp"
+                android:background="@drawable/white_grey_border_top"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Город: "/>
+                <TextView
+
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tutor_city"
+                    android:text="Almaty"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Сферы обучения: "/>
+                <TextView
+
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/detail_tutor_fields"
+                    android:text="Phsysics, Mathematics, Algebra"/>
+            </LinearLayout>
+            <LinearLayout
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Стоимость: "/>
+                <TextView
+
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tutor_cost_range"
+                    android:text=" от 1146 до 1250 тг/час"/>
+            </LinearLayout>
+            <LinearLayout
+                android:visibility="gone"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Контакты: "/>
+                <TextView
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tutor_contact_number"
+                    android:text="+77777777"/>
+            </LinearLayout>
+
+        </LinearLayout>
+        <TextView
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="10dp"
+
+
+            android:id="@+id/tutor_detail_info_text"
+            android:padding="2dp"
+            android:textColor="@color/black"
+            android:text="    Цель учебного центра “MnC”:
+
+        подготовить ребят к сложным и насыщенным олимпиадам по программированию, которые помогут получить практический опыт в программировании и развить техническое мышление.
+        получить призовые места в олимпиадах самого различного масштаба от школьных до международных
+        оказать содействие в поступлении в технические ВУЗы страны и зарубежья.
+        Индивидуальный подход к каждому подопечному является ключевым фактором Учебного Центра “MnC”. Благодаря такому методу работы множество учеников уже стали призерами республиканских и международных соревнований.
+
+        По окончании обучения, ребенок получает полные знания, практические умения и навыки в программировании, которые впоследствии станут отличным подспорьем при получении гранта на бесплатное обучение в ВУЗе и помогут уверенно пройти собеседования в крупные IT компании
+
+        Подробную информацию о достижениях наших учеников можно прочитать в социальных сетях:
+        vk.com/mathncode
+        facebook.com/mathncode
+        instagram.com/mathnode"
+            android:autoLink="all"
+            android:linksClickable="true"
+            android:textColorLink="@color/link_blue"
+            android:breakStrategy="high_quality"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</ScrollView>

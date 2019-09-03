@@ -9,11 +9,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
-import com.zhaku.detailing.EdField
-import com.zhaku.detailing.EducationCenter
-import com.zhaku.detailing.Locations
-import com.zhaku.detailing.R
+import com.zhaku.detailing.*
 import com.zhaku.detailing.StudentContent.EducationCenterContent
+import com.zhaku.detailing.StudentContent.TutorContent
 import kotlinx.android.synthetic.main.activity_item_detail.*
 
 /**
@@ -22,13 +20,13 @@ import kotlinx.android.synthetic.main.activity_item_detail.*
  * in two-pane mode (on tablets) or a [ItemDetailActivity]
  * on handsets.
  */
-class EducationCenterDetailFragment : Fragment() {
+class TutorDetailFragment : Fragment() {
 
     /**
      * The dummy content this fragment is presenting.
      */
     val TAG = "EducationCenterDetailFragment"
-    lateinit var item : EducationCenter
+    lateinit var item : Tutor
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,16 +34,15 @@ class EducationCenterDetailFragment : Fragment() {
 
         arguments?.let {
 
-                // Load the dummy content specified by the fragment
-                // arguments. In a real-world scenario, use a Loader
-                // to load content from a content provider.
+            // Load the dummy content specified by the fragment
+            // arguments. In a real-world scenario, use a Loader
+            // to load content from a content provider.
 
-                item = EducationCenterContent.ITEM_MAP[it.getString(ARG_ITEM_ID)]!!
+            item = TutorContent.ITEM_MAP[it.getString(ARG_ITEM_ID)]!!
 
-                activity?.detail_toolbar?.title = item.user.first_name
+            activity?.detail_toolbar?.title = item.user.first_name
 
-
-                Log.d("oncreate", item.user.first_name)
+            Log.d("oncreate", item.user.first_name)
         }
     }
 
@@ -54,15 +51,15 @@ class EducationCenterDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val rootView = inflater.inflate(R.layout.item_detail_edu, container, false)
+        val rootView = inflater.inflate(R.layout.item_detail_tutor, container, false)
 
-        val infoText = rootView.findViewById<TextView>(R.id.edu_detail_info_text)
-        val avatarView = rootView.findViewById<ImageView>(R.id.edu_detaiL_profile_image)
-        val edu_name : TextView = rootView.findViewById(R.id.edu_name)
-        val edu_city : TextView = rootView.findViewById(R.id.edu_city)
-        val edu_fields : TextView = rootView.findViewById(R.id.detail_edu_fields)
-        val cost_range : TextView = rootView.findViewById(R.id.edu_cost_range)
-        val contact_number: TextView = rootView.findViewById(R.id.edu_contact_number)
+        val infoText = rootView.findViewById<TextView>(R.id.tutor_detail_info_text)
+        val avatarView = rootView.findViewById<ImageView>(R.id.tutor_detaiL_profile_image)
+        val tutor_name : TextView = rootView.findViewById(R.id.tutor_name)
+        val tutor_city : TextView = rootView.findViewById(R.id.tutor_city)
+        val tutor_fields : TextView = rootView.findViewById(R.id.detail_tutor_fields)
+        val cost_range : TextView = rootView.findViewById(R.id.tutor_cost_range)
+        val contact_number: TextView = rootView.findViewById(R.id.tutor_contact_number)
 
 
         // Show the dummy content as text in a TextView.
@@ -77,17 +74,16 @@ class EducationCenterDetailFragment : Fragment() {
             }
 
 
-            edu_name.text =  it.user.first_name + it.user.last_name
-            edu_city.text = Locations.cities[it.location.city]
-            edu_fields.text = edufield_torow(it.ed_field)
+            tutor_name.text =  it.user.first_name + it.user.last_name
+            tutor_city.text = Locations.cities[it.location.city]
+            tutor_fields.text = tutorfield_torow(it.ed_field)
             cost_range.text = "с " + it.min_amount + " до " + it.max_amount
             contact_number.text = it.phone_number
         }
 
-
         return rootView
     }
-    public fun edufield_torow(fields : List<EdField>) : String {
+    public fun tutorfield_torow(fields : List<EdField>) : String {
         var s = StringBuilder()
         for (i : Int in 0..fields.size-2)
             s.append(fields[i].name+", ")
@@ -96,7 +92,7 @@ class EducationCenterDetailFragment : Fragment() {
     }
     fun formatToParagraph (s : String) : String {
         var x = "\n".count{ s.contains(it)}
-        
+
         Log.d("Spacing", "replaced this much $x")
 
         return s

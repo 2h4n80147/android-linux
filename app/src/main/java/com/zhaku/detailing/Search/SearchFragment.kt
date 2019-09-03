@@ -1,17 +1,22 @@
 package com.zhaku.detailing.Search
 
+import android.media.Image
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
-import com.zhaku.detailing.ItemLists.ItemListActivity
-import com.zhaku.detailing.ItemLists.ItemListFragment
+import com.google.android.material.tabs.TabLayout
+import com.zhaku.detailing.ItemLists.*
 import com.zhaku.detailing.R
 import com.zhaku.detailing.MainActivity
-
+import kotlinx.android.synthetic.main.layout_appbar_with_toolbar.view.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -40,6 +45,10 @@ class SearchFragment : Fragment() {
 //            param2 = it.getString(ARG_PARAM2)
 //        }
 //    }
+
+    private val tabTitles = arrayOf("Оброзовательный\nцентр", "Репетитор", "Ученик")
+
+    private val tabIcons = arrayOf(R.drawable.ic_school_foreground, R.drawable.tutor, R.drawable.student)
     val TAG = "SearchFragment"
     lateinit var viewPager : ViewPager
     override fun onCreateView(
@@ -50,7 +59,10 @@ class SearchFragment : Fragment() {
         // Inflate the layout for this fragment
         val root = inflater.inflate(R.layout.fragment_search, container, false)
          viewPager = root.findViewById<ViewPager>(R.id.viewPager)
+
+        val tabLayout = root.findViewById<TabLayout>(R.id.tabLayout)
         setupViewPager()
+        tabLayout.setupWithViewPager(viewPager)
 
         return root
     }
@@ -62,6 +74,27 @@ class SearchFragment : Fragment() {
 
     }
 
+    class SampleFragmentPagerAdapter(fm: FragmentManager) :
+        FragmentPagerAdapter(fm) {
+        internal val PAGE_COUNT = 3
+        private val tabTitles = arrayOf("Оброзовательный центр", "Репетитор", "Ученик")
+        val fragments = arrayOf(EducationItemListFragment(), TutorItemListFragment(), StudentItemListFragment())
+
+        override fun getCount(): Int {
+            return PAGE_COUNT
+        }
+
+
+        override fun getItem(position: Int): Fragment {
+            return fragments[position]
+        }
+
+        override fun getPageTitle(position: Int): CharSequence? {
+            // генерируем заголовок в зависимости от позиции
+            return tabTitles[position]
+        }
+
+    }
     // TODO: Rename method, update argument and hook method into UI event
 //    fun onButtonPressed(uri: Uri) {
 //        listener?.onFragmentInteraction(uri)

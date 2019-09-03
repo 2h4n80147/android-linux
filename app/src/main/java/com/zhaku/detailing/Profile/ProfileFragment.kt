@@ -9,7 +9,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.zhaku.detailing.ItemLists.ItemListActivity
+import com.zhaku.detailing.Login.LoginActivity
 import com.zhaku.detailing.R
+import com.zhaku.detailing.backendApiService
 
 
 class ProfileFragment : Fragment() {
@@ -31,6 +33,11 @@ class ProfileFragment : Fragment() {
             startActivity(intent)
         }
 
+
         return rootView
+    }
+    fun getUserInfo() {
+        val apiService = backendApiService.createWithRx()
+
     }
 }

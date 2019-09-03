@@ -19,7 +19,12 @@
 
 
         </activity>
-        <activity android:name=".Profile.EditProfile"></activity>
+        <activity android:name=".Profile.EditProfile"
+            android:theme="@style/AppTheme.NoActionBar"
+            >
+
+
+        </activity>
         <activity android:name=".ShareActivity" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".ProfileActivity" />
@@ -28,6 +33,7 @@
             android:name=".HomeActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:windowSoftInputMode="adjustPan"
             android:name=".Register.RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
