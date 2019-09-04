@@ -10,9 +10,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.zhaku.detailing.*
-import com.zhaku.detailing.StudentContent.EducationCenterContent
 import com.zhaku.detailing.StudentContent.StudentContent
-import com.zhaku.detailing.StudentContent.TutorContent
+import com.zhaku.detailing.data.EdField
+import com.zhaku.detailing.data.Student
 import kotlinx.android.synthetic.main.activity_item_detail.*
 
 /**

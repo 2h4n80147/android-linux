@@ -8,7 +8,7 @@ import android.text.TextWatcher
 import android.util.Log
 import android.view.Gravity
 import android.widget.*
-import com.zhaku.detailing.LoginAndPassword
+import com.zhaku.detailing.data.LoginAndPassword
 import com.zhaku.detailing.R
 import com.zhaku.detailing.backendApiService
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -35,22 +35,26 @@ class LoginActivity : AppCompatActivity() {
         progressBar = findViewById(R.id.progressbar_login)
 
         val login_button = findViewById<Button>(R.id.btn_login)
-        val registerButton = findViewById<TextView>(R.id.link_signup)
+        val reigster_link = findViewById<TextView>(R.id.link_signup)
 
         username.setText("Bek")
         password.setText("bek")
         username.addTextChangedListener(  object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+                login_button.isClickable = (username.text.toString() != "" && password.text.toString() != "")
                 TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+                login_button.isClickable = (username.text.toString() != "" && password.text.toString() != "")
                 TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
 
             override fun afterTextChanged(p0: Editable?) {
-                if (username.text.toString() != "" && password.text.toString() != "")
-                    login_button.isEnabled = true
+                login_button.isClickable = (username.text.toString() != "" && password.text.toString() != "")
+
             }
         })
 
@@ -58,7 +62,7 @@ class LoginActivity : AppCompatActivity() {
             progressBar.setVisibility(ProgressBar.VISIBLE)
             login(username.text.toString(), password.text.toString())
         }
-        registerButton.setOnClickListener{
+        reigster_link.setOnClickListener{
 
             val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
             startActivity(intent)

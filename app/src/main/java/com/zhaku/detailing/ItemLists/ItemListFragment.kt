@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.zhaku.detailing.*
@@ -16,13 +15,11 @@ import com.zhaku.detailing.Details.EducationCenterDetailFragment
 import com.zhaku.detailing.Details.ItemDetailActivity
 
 import com.zhaku.detailing.StudentContent.EducationCenterContent
-import com.zhaku.detailing.StudentContent.StudentContent
-import com.zhaku.detailing.StudentContent.TutorContent
+import com.zhaku.detailing.data.EdField
+import com.zhaku.detailing.data.EducationCenter
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.item_list.*
 import kotlinx.android.synthetic.main.item_list_content.view.*
-import kotlin.math.min
 
 class ItemListFragment(contentiiid : Int): Fragment() {
     val contentId by lazy { contentiiid}

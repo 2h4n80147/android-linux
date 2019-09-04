@@ -4,15 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.view.inputmethod.EditorInfo
 import android.widget.*
 import com.zhaku.detailing.R
-import androidx.core.content.ContextCompat
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
-import com.zhaku.detailing.User
-import com.zhaku.detailing.globalUser
-import kotlinx.android.synthetic.main.activity_edit_profile.*
+import com.zhaku.detailing.data.globalUser
 import java.security.AccessController.getContext
 
 

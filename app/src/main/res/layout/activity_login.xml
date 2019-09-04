@@ -68,18 +68,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal">
-                    <ProgressBar
-                        android:visibility="invisible"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/progressbar_login"
-                        />
+
                     <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         >
                         <Button
-                            android:enabled="false"
                             android:textColor="@color/white"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -89,6 +83,12 @@
                             android:id="@+id/btn_login"
                             android:padding="12dp"
                             android:background="@drawable/blue_rounded_button"/>
+                        <ProgressBar
+                            android:visibility="invisible"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/progressbar_login"
+                            />
                     </FrameLayout>
 
                 </FrameLayout>

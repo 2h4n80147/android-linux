@@ -1,19 +1,13 @@
 package com.zhaku.detailing
 
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
-import android.content.Intent
-import android.widget.AdapterView
-import android.text.method.TextKeyListener.clear
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.View
-import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.ListView
+import com.zhaku.detailing.data.User
 import java.util.*
 import kotlin.collections.ArrayList
 

@@ -1,6 +1,9 @@
 package com.zhaku.detailing.StudentContent
 
 import com.zhaku.detailing.*
+import com.zhaku.detailing.data.EducationCenter
+import com.zhaku.detailing.data.Student
+import com.zhaku.detailing.data.Tutor
 import java.util.ArrayList
 import java.util.HashMap
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -35,7 +38,7 @@ import io.reactivex.schedulers.Schedulers
 //}
 object EducationCenterContent { // 0
 
-    val ITEMS: MutableList<com.zhaku.detailing.EducationCenter> = ArrayList()
+    val ITEMS: MutableList<EducationCenter> = ArrayList()
 
     /**
      * A map of sample (dummy) items, by ID.
@@ -69,7 +72,7 @@ object EducationCenterContent { // 0
 }
 object StudentContent { // 2
 
-    val ITEMS: MutableList<com.zhaku.detailing.Student> = ArrayList()
+    val ITEMS: MutableList<Student> = ArrayList()
 
     /**
      * A map of sample (dummy) items, by ID.

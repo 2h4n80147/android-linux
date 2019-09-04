@@ -1,92 +1,225 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Register.SecondStep"
 
     >
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:fontFamily="@font/roboto"
-        android:layout_gravity="center_horizontal"
-
-        android:textColor="@color/black"
-        android:text="Добавьте информация про вас"
-        android:textSize="20sp"
-        android:gravity="center_horizontal"
-        />
     <LinearLayout
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto"
+            android:layout_gravity="center_horizontal"
+
+            android:textColor="@color/black"
+            android:text="Добавьте информация про вас"
+            android:textSize="20sp"
+            android:gravity="center_horizontal"
+            />
         <LinearLayout
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical"
             >
+
+            <ImageView
+                android:background="@drawable/white_rounded_button"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_menu_profile_foreground"
+                android:layout_width="200dp"
+                android:layout_height="200dp"/>
+            <Button
+                android:layout_marginTop="20dp"
+                android:background="@drawable/blue_rounded_button"
+                android:textColor="@color/white"
+
+                android:text="Добавить фото"
+                android:id="@+id/reg_select_image"
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Сферы образования"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    />
+                <com.hootsuite.nachos.NachoTextView
+                    android:id="@+id/reg_edfieds"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:chipSpacing="2dp"
+                    app:chipBackground="@color/white"
+                    app:chipTextColor="@color/black"
+                    app:chipTextSize="16dp"
+                    app:chipHeight="30dp"
+                    app:chipVerticalSpacing="3dp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:padding="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="Город"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/roboto"
+
+                    />
+                <Spinner
+
+                    android:entries="@array/city2"
+                    android:layout_marginLeft="50dp"
+                    android:id="@+id/reg_city_choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+
+
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:text="Город"
-                android:textColor="@color/black"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
                 android:textSize="20sp"
-                android:fontFamily="@font/roboto"
-
-                />
-            <Spinner
-
-                android:entries="@array/city2"
-                android:layout_marginLeft="50dp"
-                android:id="@+id/reg_city_choice"
+                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                />
+                android:text="Место обучения"/>
+
+            <RadioGroup
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="У ученика"
+                    />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="У преподователя"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Без разницы"/>
+            </RadioGroup>
+
+
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="Адрес"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/roboto"
+
+                    />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/reg_input_address"
+
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Пол"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="20sp"
+                    />
+
+                <RadioGroup
+                    android:layout_marginStart="50dp"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Муж."
+                        />
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Жен."
+                        />
+                </RadioGroup>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="О себе"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/reg_detail_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
         </LinearLayout>
-       <LinearLayout
-           android:layout_marginTop="10dp"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:orientation="horizontal"
-           >
-           <TextView
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="Пол"
-               android:textColor="@color/black"
-               android:fontFamily="@font/roboto"
-               android:textSize="20sp"
-               />
-           <RadioGroup
-               android:layout_marginStart="50dp"
-
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:orientation="horizontal"
-               >
-               <RadioButton
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="Муж."
-                   />
-               <RadioButton
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="Жен."
-                   />
-           </RadioGroup>
-       </LinearLayout>
-
-
-
-
 
     </LinearLayout>
 
-
-</LinearLayout>
+</ScrollView>

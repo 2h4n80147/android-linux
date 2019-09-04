@@ -1,8 +1,9 @@
 package com.zhaku.detailing
 
+import com.zhaku.detailing.data.*
 import io.reactivex.Observable
 import io.reactivex.Single
-import retrofit2.Response
+import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -42,17 +43,21 @@ interface backendApiService {
     @POST("customers/students")
     fun registerStudent(@Body user : Student) : Single<Student>
 
+    @GET("custoemrs/education_fields")
+    fun getEducationFields() : Call<List<EdFieldForChoice>>
 
 
     /**
      * Companion object to create the apiService
      */
+
     companion object Factory {
+        val BASE_URL = "https://bilimdelion-backup-server.herokuapp.com/"
         fun createWithRx(): backendApiService {
             val retrofit = Retrofit.Builder()
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("https://bilimdelion-backup-server.herokuapp.com/")
+                .baseUrl(BASE_URL)
                 .build()
 
             return retrofit.create(backendApiService::class.java)

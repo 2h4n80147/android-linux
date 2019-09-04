@@ -1,4 +1,4 @@
-package com.zhaku.detailing
+package com.zhaku.detailing.data
 
 data class Result (val total_count: Int, val incomplete_results: Boolean, val items: List<Student>)
 
@@ -71,6 +71,12 @@ data class EdField(
     val id: Int,
     val name: String
 )
+data class EdFieldForChoice(
+    val text : String,
+    val value : String,
+    val key : String
+)
+
 data class Tutor(
     val available: Boolean,
     val ed_field: List<EdField>,
