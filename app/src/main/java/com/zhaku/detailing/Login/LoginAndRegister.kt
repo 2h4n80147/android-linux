@@ -1,14 +1,11 @@
-package com.zhaku.detailing
+package com.zhaku.detailing.Login
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import android.widget.ViewFlipper
-import androidx.appcompat.widget.AppCompatButton
-import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.activity_login_and_register.view.*
+import com.zhaku.detailing.R
 
 class LoginAndRegister : AppCompatActivity() {
     lateinit var viewFlipper: ViewFlipper

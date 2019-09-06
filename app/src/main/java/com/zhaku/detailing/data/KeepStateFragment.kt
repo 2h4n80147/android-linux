@@ -1,4 +1,4 @@
-package com.zhaku.detailing
+package com.zhaku.detailing.data
 
 //import android.content.Context
 //import android.os.Bundle

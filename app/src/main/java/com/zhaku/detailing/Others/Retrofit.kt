@@ -1,3 +1,5 @@
+package com.zhaku.detailing.Others
+
 //package com.zhaku.detailing
 //
 //import android.text.TextUtils

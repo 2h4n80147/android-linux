@@ -17,9 +17,11 @@ import com.zhaku.detailing.Details.ItemDetailActivity
 import com.zhaku.detailing.StudentContent.EducationCenterContent
 import com.zhaku.detailing.data.EdField
 import com.zhaku.detailing.data.EducationCenter
+import com.zhaku.detailing.data.backendApiService
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.item_list_content.view.*
+import java.util.*
 
 class ItemListFragment(contentiiid : Int): Fragment() {
     val contentId by lazy { contentiiid}
@@ -196,6 +198,7 @@ class ItemListFragment(contentiiid : Int): Fragment() {
             val profileimgView: de.hdodenhof.circleimageview.CircleImageView = view.profile_img
             val nameView: TextView = view.profile_name
             val edu_fieldView: TextView = view.edu_field
+
         }
     }
 

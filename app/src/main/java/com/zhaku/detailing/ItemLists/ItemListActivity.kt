@@ -5,27 +5,10 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.zhaku.detailing.R
-import androidx.annotation.NonNull
 
 import androidx.fragment.app.Fragment
-import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
-import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.navigation.NavigationView
-import com.zhaku.detailing.Search.SearchFragment
-import kotlinx.android.synthetic.main.activity_item_list.*
-import android.view.ViewGroup
-import android.util.SparseArray
-import android.view.Menu
-import android.view.MenuItem
-import androidx.fragment.app.FragmentPagerAdapter
-
-import androidx.fragment.app.FragmentManager
-import com.zhaku.detailing.HomeFragment
-import com.zhaku.detailing.Profile.ProfileFragment
-import java.lang.ref.WeakReference
 
 
 /**

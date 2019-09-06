@@ -66,14 +66,15 @@
                     android:textColor="@color/black"
                     />
                 <com.hootsuite.nachos.NachoTextView
+
                     android:id="@+id/reg_edfieds"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:chipSpacing="2dp"
-                    app:chipBackground="@color/white"
+                    app:chipBackground="@color/grey"
                     app:chipTextColor="@color/black"
                     app:chipTextSize="16dp"
-                    app:chipHeight="30dp"
+                    app:chipHeight="20dp"
                     app:chipVerticalSpacing="3dp"
                     />
             </LinearLayout>
@@ -122,15 +123,21 @@
                 android:orientation="horizontal"
                 >
                 <RadioButton
+                    android:id="@+id/edit_prefferedplace_student"
+                    android:buttonTint="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="У ученика"
                     />
                 <RadioButton
+                    android:id="@+id/edit_prefferedplace_tutor"
+                    android:buttonTint="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="У преподователя"/>
                 <RadioButton
+                    android:id="@+id/edit_prefferedplace_any"
+                    android:buttonTint="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Без разницы"/>
@@ -186,11 +193,13 @@
                     android:orientation="horizontal"
                     >
                     <RadioButton
+                        android:buttonTint="@color/black"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Муж."
                         />
                     <RadioButton
+                        android:buttonTint="@color/colorBlack"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Жен."

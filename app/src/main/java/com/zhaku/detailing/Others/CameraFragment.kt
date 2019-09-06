@@ -1,4 +1,4 @@
-package com.zhaku.detailing
+package com.zhaku.detailing.Others
 
 import androidx.fragment.app.Fragment
 
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.view.View
+import com.zhaku.detailing.R
 
 
 class CameraFragment : Fragment() {

@@ -1,18 +1,13 @@
-package com.zhaku.detailing
+package com.zhaku.detailing.Others
 
 
 import android.content.Context
 import android.util.Log
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
-import android.media.AudioRecord.MetricsConstants.SOURCE
-import java.lang.annotation.RetentionPolicy
-import androidx.core.content.ContextCompat.startActivity
 import android.content.Intent
 import android.view.MenuItem
-import androidx.annotation.NonNull
 import com.google.android.material.bottomnavigation.BottomNavigationView
-
-
+import com.zhaku.detailing.R
 
 
 object BottomNavigationViewHelper {

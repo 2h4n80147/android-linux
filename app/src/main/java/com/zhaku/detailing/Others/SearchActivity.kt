@@ -1,4 +1,4 @@
-package com.zhaku.detailing
+package com.zhaku.detailing.Others
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
 import android.widget.ListView
+import com.zhaku.detailing.R
 import com.zhaku.detailing.data.User
 import java.util.*
 import kotlin.collections.ArrayList

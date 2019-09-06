@@ -6,11 +6,8 @@ import android.util.Log
 import android.view.*
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import com.zhaku.detailing.ItemLists.ItemListActivity
-import com.zhaku.detailing.Login.LoginActivity
 import com.zhaku.detailing.R
-import com.zhaku.detailing.backendApiService
+import com.zhaku.detailing.data.backendApiService
 
 
 class ProfileFragment : Fragment() {

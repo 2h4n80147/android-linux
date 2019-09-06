@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide
 import com.zhaku.detailing.*
 import com.zhaku.detailing.StudentContent.TutorContent
 import com.zhaku.detailing.data.EdField
+import com.zhaku.detailing.data.Locations
 import com.zhaku.detailing.data.Tutor
 import kotlinx.android.synthetic.main.activity_item_detail.*
 

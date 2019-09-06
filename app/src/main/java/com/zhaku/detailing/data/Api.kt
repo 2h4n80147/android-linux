@@ -1,6 +1,5 @@
-package com.zhaku.detailing
+package com.zhaku.detailing.data
 
-import com.zhaku.detailing.data.*
 import io.reactivex.Observable
 import io.reactivex.Single
 import retrofit2.Call
@@ -43,7 +42,7 @@ interface backendApiService {
     @POST("customers/students")
     fun registerStudent(@Body user : Student) : Single<Student>
 
-    @GET("custoemrs/education_fields")
+    @GET("customers/education_fields")
     fun getEducationFields() : Call<List<EdFieldForChoice>>
 
 

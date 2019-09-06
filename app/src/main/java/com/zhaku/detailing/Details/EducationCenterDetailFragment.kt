@@ -11,7 +11,7 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.zhaku.detailing.data.EdField
 import com.zhaku.detailing.data.EducationCenter
-import com.zhaku.detailing.Locations
+import com.zhaku.detailing.data.Locations
 import com.zhaku.detailing.R
 import com.zhaku.detailing.StudentContent.EducationCenterContent
 import kotlinx.android.synthetic.main.activity_item_detail.*

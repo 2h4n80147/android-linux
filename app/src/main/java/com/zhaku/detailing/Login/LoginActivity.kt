@@ -1,5 +1,6 @@
 package com.zhaku.detailing.Login
 
+import android.app.Dialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,9 +9,10 @@ import android.text.TextWatcher
 import android.util.Log
 import android.view.Gravity
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import com.zhaku.detailing.data.LoginAndPassword
 import com.zhaku.detailing.R
-import com.zhaku.detailing.backendApiService
+import com.zhaku.detailing.data.backendApiService
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import com.google.android.material.textfield.TextInputEditText
@@ -87,7 +89,13 @@ class LoginActivity : AppCompatActivity() {
                 }
             ,
                 {
-                    //AlertDialog.Builder(MainActivity)
+//                    AlertDialog.Builder(applicationContext)
+//
+//                        .setTitle("Title")
+//                        .setMessage("Message")
+//                        .setPositiveButton("Ok", null)
+//                        .show()
+
                     Log.d("login","fail")
                     var toast : Toast = Toast.makeText(getApplicationContext(),
                         "Не удалось зайти, попробуйте заново", Toast.LENGTH_LONG)

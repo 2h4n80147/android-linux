@@ -1,25 +1,22 @@
-package com.zhaku.detailing
+package com.zhaku.detailing.Others
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
+import com.zhaku.detailing.R
 
+class HomeActivity : AppCompatActivity() {
+    private val TAG = "HomeActivity"
+    private val ACTIVITY_NUM = 0
 
-/**
- * Created by User on 5/28/2017.
- */
-
-class ProfileActivity : AppCompatActivity() {
-
-    private val mContext = this@ProfileActivity
-
-    override fun onCreate( savedInstanceState: Bundle?) {
+    private val mContext = this@HomeActivity
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-        Log.d(TAG, "onCreate: started.")
+        Log.d(TAG, "onCreate: starting.");
 
-        setupBottomNavigationView()
+        setupBottomNavigationView();
     }
 
     /**
@@ -33,10 +30,5 @@ class ProfileActivity : AppCompatActivity() {
         val menu = bottomNavigationViewEx.menu
         val menuItem = menu.getItem(ACTIVITY_NUM)
         menuItem.isChecked = true
-    }
-
-    companion object {
-        private val TAG = "ProfileActivity"
-        private val ACTIVITY_NUM = 4
     }
 }

@@ -17,6 +17,7 @@ import com.zhaku.detailing.Details.StudentDetailFragment
 import com.zhaku.detailing.StudentContent.StudentContent
 import com.zhaku.detailing.data.EdField
 import com.zhaku.detailing.data.Student
+import com.zhaku.detailing.data.backendApiService
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.item_list_content.view.*

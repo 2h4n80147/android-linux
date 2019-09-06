@@ -1,4 +1,4 @@
-package com.zhaku.detailing
+package com.zhaku.detailing.Others
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.util.Log
 
 import androidx.annotation.Nullable
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
+import com.zhaku.detailing.R
 
 
 class LikesActivity : AppCompatActivity() {
