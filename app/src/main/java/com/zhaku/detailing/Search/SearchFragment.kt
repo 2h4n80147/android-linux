@@ -12,11 +12,17 @@ import android.widget.TextView
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
 import com.zhaku.detailing.ItemLists.*
 import com.zhaku.detailing.R
 import com.zhaku.detailing.MainActivity
+import kotlinx.android.synthetic.main.fragment_search.view.*
 import kotlinx.android.synthetic.main.layout_appbar_with_toolbar.view.*
+import com.google.android.material.bottomsheet.BottomSheetDialog
+
+
+
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -47,7 +53,7 @@ class SearchFragment : Fragment() {
 //    }
 
     private val tabTitles = arrayOf("Оброзовательный\nцентр", "Репетитор", "Ученик")
-
+    private lateinit var fabFilter : FloatingActionButton
     private val tabIcons = arrayOf(R.drawable.ic_school_foreground, R.drawable.tutor, R.drawable.student)
     val TAG = "SearchFragment"
     lateinit var viewPager : ViewPager
@@ -63,6 +69,19 @@ class SearchFragment : Fragment() {
         val tabLayout = root.findViewById<TabLayout>(R.id.tabLayout)
         setupViewPager()
         tabLayout.setupWithViewPager(viewPager)
+        with(root) {
+            fabFilter = findViewById(R.id.fab_filter)
+        }
+        fabFilter.setOnClickListener{
+            val mBottomSheetDialog = BottomSheetDialog(activity!!)
+            val sheetView = activity!!.layoutInflater.inflate(
+                R.layout.bottom_sheet_filter,
+                null
+            )
+            mBottomSheetDialog.setContentView(sheetView)
+            mBottomSheetDialog.show()
+        }
+
 
         return root
     }
@@ -70,8 +89,6 @@ class SearchFragment : Fragment() {
         viewPager.setAdapter(
             SampleFragmentPagerAdapter(childFragmentManager)
         )
-
-
     }
 
     class SampleFragmentPagerAdapter(fm: FragmentManager) :

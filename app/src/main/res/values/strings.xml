@@ -112,6 +112,11 @@
         <item>Мужcкой</item>
         <item>Женcкий</item>
     </string-array>
+    <string-array name="SexListChoice">
+        <item>Любой</item>
+        <item>Мужcкой</item>
+        <item>Женcкий</item>
+    </string-array>
     <string-array name="city">
         <item>Любой</item>
         <item>Алматы</item>
