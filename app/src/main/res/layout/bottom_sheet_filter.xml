@@ -11,10 +11,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <TextView
+
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Поиск"
+        android:text="Поиск фильтр"
         android:textStyle="bold"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -84,40 +85,50 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Максимальная стоимость"/>
-
         <com.jaygoo.widget.RangeSeekBar
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:rsb_mode="single"
-            app:rsb_tick_mark_mode="number"
-            app:rsb_tick_mark_text_margin="12dp"
-
-            app:rsb_progress_color="@color/grey"
-            app:rsb_progress_default_color="@color/grey"
-            app:rsb_indicator_height="40dp"
-            app:rsb_indicator_width="40dp"
-            app:rsb_tick_mark_text_color="@color/black"
-            app:rsb_tick_mark_layout_gravity="bottom"
+            android:layout_height="match_parent"
             app:rsb_tick_mark_text_array="@array/cost_ticks"
             app:rsb_min="0"
             app:rsb_max="10000"
-            app:rsb_indicator_show_mode="alwaysShowAfterTouch"
-            app:rsb_indicator_background_color="@color/white"
-            app:rsb_indicator_text_color="@color/black"
+            app:rsb_tick_mark_text_color="@color/black"
+
+            app:rsb_tick_mark_text_margin="20dp"
 
             />
 
 
-    </LinearLayout>
-    <Button
-        android:textColor="@color/white"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Показать результаты"
 
-        android:background="@drawable/blue_rounded_button"
-        />
+
+    </LinearLayout>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+
+            android:id="@+id/filter_btn_accept"
+            android:padding="10dp"
+            android:layout_gravity="start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Применить"
+            android:textColor="@color/white"
+
+
+            android:background="@drawable/blue_rounded_button"/>
+
+        <TextView
+            android:id="@+id/filter_btn_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:text="Сбросить"
+            android:textSize="20sp"
+            android:textColor="@color/link_blue" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
 

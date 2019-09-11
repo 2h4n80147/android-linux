@@ -88,13 +88,12 @@
 
         </androidx.viewpager.widget.ViewPager>
 
-        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:src="@drawable/filter_options"
-            android:contentDescription="FilterSearch"
             android:layout_margin="16dp" />
     </FrameLayout>
 
