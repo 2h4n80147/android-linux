@@ -22,7 +22,7 @@
             android:layout_gravity="center_horizontal"
 
             android:textColor="@color/black"
-            android:text="Добавьте информация про вас"
+            android:text="Добавьте информацию про вас"
             android:textSize="20sp"
             android:gravity="center_horizontal"
             />
@@ -37,6 +37,7 @@
             >
 
             <ImageView
+                android:id="@+id/reg_profile_image"
                 android:background="@drawable/white_rounded_button"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/ic_menu_profile_foreground"
@@ -53,25 +54,29 @@
 
                 android:layout_height="wrap_content"/>
             <LinearLayout
+                android:padding="10dp"
+                android:background="@drawable/grey_border_top"
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 >
                 <TextView
+                    android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Сферы образования"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/reg_text_dimensions"
                     android:textColor="@color/black"
                     />
                 <com.hootsuite.nachos.NachoTextView
+                    android:hint="математика, рисование"
 
                     android:id="@+id/reg_edfieds"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:chipSpacing="2dp"
-                    app:chipBackground="@color/grey"
+                    app:chipBackground="@color/white"
                     app:chipTextColor="@color/black"
                     app:chipTextSize="16dp"
                     app:chipHeight="20dp"
@@ -80,8 +85,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:padding="20dp"
-                android:layout_marginTop="20dp"
+                android:padding="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -91,8 +95,9 @@
                     android:layout_height="wrap_content"
 
                     android:text="Город"
+                    android:textStyle="bold"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/reg_text_dimensions"
                     android:fontFamily="@font/roboto"
 
                     />
@@ -106,47 +111,68 @@
                     />
             </LinearLayout>
 
-
-            <TextView
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
-                android:textSize="20sp"
-                android:textColor="@color/black"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Место обучения"/>
-
-            <RadioGroup
-                android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:orientation="vertical"
+                android:padding="10dp"
                 >
-                <RadioButton
-                    android:id="@+id/edit_prefferedplace_student"
-                    android:buttonTint="@color/black"
+                <TextView
+                    android:textStyle="bold"
+                    android:layout_marginTop="20dp"
+                    android:textSize="@dimen/reg_text_dimensions"
+                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="У ученика"
-                    />
-                <RadioButton
-                    android:id="@+id/edit_prefferedplace_tutor"
-                    android:buttonTint="@color/black"
+                    android:text="Место обучения"/>
+
+                <RadioGroup
+                    android:layout_marginTop="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="У преподователя"/>
-                <RadioButton
-                    android:id="@+id/edit_prefferedplace_any"
-                    android:buttonTint="@color/black"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Без разницы"/>
-            </RadioGroup>
+                    android:orientation="horizontal"
+
+                    >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            >
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                >
+                                <RadioButton
+                                    android:id="@+id/edit_prefferedplace_student"
+                                    android:buttonTint="@color/black"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="У ученика"
+                                    />
+                                <RadioButton
+                                    android:id="@+id/edit_prefferedplace_tutor"
+                                    android:buttonTint="@color/black"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="У преподователя"/>
+                            </LinearLayout>
+                            <RadioButton
+                                android:id="@+id/edit_prefferedplace_any"
+                                android:buttonTint="@color/black"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Без разницы"/>
+                        </LinearLayout>
+
+                </RadioGroup>
+            </LinearLayout>
+
 
 
 
             <LinearLayout
-                android:layout_marginTop="20dp"
+                android:padding="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -157,7 +183,8 @@
 
                     android:text="Адрес"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/reg_text_dimensions"
                     android:fontFamily="@font/roboto"
 
                     />
@@ -171,19 +198,20 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginTop="20dp"
+                android:padding="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 >
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="clip_horizontal"
                     android:text="Пол"
                     android:textColor="@color/black"
-                    android:fontFamily="@font/roboto"
-                    android:textSize="20sp"
-                    />
+                    android:textSize="@dimen/reg_text_dimensions"
+                    android:textStyle="bold" />
 
                 <RadioGroup
                     android:layout_marginStart="50dp"
@@ -210,21 +238,25 @@
 
 
             <TextView
-                android:textSize="20sp"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="О себе"/>
+                android:layout_marginTop="10dp"
+                android:text="О себе"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:visibility="gone" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
+                android:padding="10dp"
+                app:hintTextColor="@color/black"
                 android:layout_height="wrap_content">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/reg_detail_info"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    />
+                    android:hint="О себе" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>

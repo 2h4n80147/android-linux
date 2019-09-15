@@ -9,6 +9,8 @@ import com.zhaku.detailing.R
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import android.view.MotionEvent
 
 
 /**
@@ -38,14 +40,7 @@ class ItemListActivity : AppCompatActivity() {
 
 
         bottomBar.setupWithNavController(navController)
-//
-//        fab.setOnClickListener { view ->
-//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                .setAction("Action", null).show()
-//        }
-
     }
-
 }
 
 

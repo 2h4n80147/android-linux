@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingTop="55dp"
+        android:paddingTop="40dp"
         android:paddingLeft="25dp"
         android:paddingRight="25dp"
         >
@@ -41,7 +41,7 @@
             android:text="Вы"/>
 
         <RadioGroup
-            android:id="@+id/usertype"
+            android:id="@+id/registration_user_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -55,7 +55,7 @@
 
                 android:buttonTint="@color/black"
                 android:text="Ученик"
-                android:textSize="15sp" />
+              />
 
             <RadioButton
                 android:id="@+id/reg_choice_tutor"
@@ -64,7 +64,7 @@
 
                 android:buttonTint="@color/black"
                 android:text="Преподователь"
-                android:textSize="15sp" />
+               />
 
             <RadioButton
                 android:id="@+id/reg_choice_edu"
@@ -73,7 +73,7 @@
 
                 android:buttonTint="@color/black"
                 android:text="Образовательный центр"
-                android:textSize="15sp" />
+                 />
         </RadioGroup>
 
 
@@ -104,7 +104,7 @@
                 android:textSize="@dimen/reg_text_dimensions"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
+
                 android:hint="Имя пользователя"
                 android:id="@+id/input_username"/>
 

@@ -82,8 +82,10 @@
                             android:text="Войти"
                             android:id="@+id/btn_login"
                             android:padding="12dp"
-                            android:background="@drawable/blue_rounded_button"/>
+                            android:background="@color/link_blue"
+                            />
                         <ProgressBar
+
                             android:visibility="invisible"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"

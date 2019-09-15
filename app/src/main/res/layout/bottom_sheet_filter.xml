@@ -1,138 +1,279 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
-    android:id="@+id/bottom_sheet_search"
+<RelativeLayout
+
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:background="#ffffff"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
-
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_sheet_search"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <TextView
+    tools:context=".Search.SearchFragment"
 
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Поиск фильтр"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        />
+    xmlns:tools="http://schemas.android.com/tools">
+
 
     <LinearLayout
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Город "
-            android:textSize="@dimen/reg_text_dimensions"
-
-            />
-        <Spinner
-
+        android:background="#ffffff"
+>
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:entries="@array/city"
-            />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
-            android:textSize="16sp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Пол"/>
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/SexListChoice"/>
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_margin="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Стоимость"
-            android:textStyle="bold"
-            />
+            android:padding="13dp"
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Минимальная стоимость"
-            />
-        <SeekBar
-            android:id="@+id/filter_mincost"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/grey_border_bottom"
+            >
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Параметры поиска"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                />
+            <TextView
+                android:id="@+id/filter_btn_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_horizontal"
+                android:text="Сбросить"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/link_blue" />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:tickMark="@color/black"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Максимальная стоимость"/>
-        <com.jaygoo.widget.RangeSeekBar
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:rsb_tick_mark_text_array="@array/cost_ticks"
-            app:rsb_min="0"
-            app:rsb_max="10000"
-            app:rsb_tick_mark_text_color="@color/black"
+            >
+            <TextView
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Сферы образования"
+                android:textColor="@color/black"
+                />
+            <com.hootsuite.nachos.NachoTextView
+                android:hint="математика, рисование"
 
-            app:rsb_tick_mark_text_margin="20dp"
+                android:id="@+id/filter_edfields"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:chipSpacing="2dp"
+                app:chipBackground="@color/white"
+                app:chipTextColor="@color/black"
+                app:chipTextSize="13sp"
+                app:chipHeight="20dp"
+                app:chipVerticalSpacing="3dp"
+                />
+        </LinearLayout>
+        <LinearLayout
 
-            />
-
-
-
-
-    </LinearLayout>
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-
-            android:id="@+id/filter_btn_accept"
             android:padding="10dp"
-            android:layout_gravity="start"
-            android:layout_width="wrap_content"
+            android:background="@drawable/grey_border_bottom"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Город "
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                />
+            <Spinner
+                android:id="@+id/filter_city_choice"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/city"
+
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Применить"
-            android:textColor="@color/white"
+            android:orientation="vertical"
+            android:background="@drawable/grey_border_bottom"
+            >
+            <TextView
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Стоимость"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Минимальная стоимость"
+                android:textStyle="bold"
+                />
+            <com.jaygoo.widget.RangeSeekBar
+                android:id="@+id/filter_min_cost"
+                app:rsb_mode="single"
+
+                app:rsb_progress_color="@color/link_blue"
+
+                app:rsb_indicator_show_mode="alwaysShow"
+                app:rsb_indicator_text_color="@color/black"
+                app:rsb_indicator_background_color="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                app:rsb_gravity="bottom"
+                app:rsb_tick_mark_text_array="@array/cost_ticks"
+                app:rsb_tick_mark_layout_gravity="bottom"
+
+                app:rsb_min="0"
+                app:rsb_max="10000"
+                app:rsb_tick_mark_text_color="@color/black"
+
+                app:rsb_tick_mark_text_margin="20dp"
+
+                />
+            <TextView
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Максимальная стоимость"/>
+            <com.jaygoo.widget.RangeSeekBar
+                android:id="@+id/filter_max_cost"
+                app:rsb_mode="single"
+
+                app:rsb_progress_color="@color/link_blue"
+                app:rsb_gravity="bottom"
+                app:rsb_indicator_show_mode="alwaysShow"
+                app:rsb_indicator_text_color="@color/black"
+                app:rsb_indicator_background_color="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                app:rsb_tick_mark_text_array="@array/cost_ticks"
+                app:rsb_tick_mark_layout_gravity="bottom"
+                app:rsb_min="0"
+                app:rsb_max="10000"
+                app:rsb_tick_mark_text_color="@color/black"
+
+                app:rsb_tick_mark_text_margin="20dp"
+
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/grey_border_bottom"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Место обучение"
+                android:textColor="@color/black"
+
+                android:textStyle="bold"
+                />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="3"
+                >
+                <RadioButton
+                    android:layout_weight="1"
+                    android:text="У ученика"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <RadioButton
+                    android:layout_weight="1"
+                    android:text="У преподователя"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <RadioButton
+                    android:layout_weight="1"
+                    android:text="Без разницы"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@drawable/grey_border_bottom"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Пол"/>
+
+            <com.savvyapps.togglebuttonlayout.ToggleButtonLayout
+                android:id="@+id/toggle_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="16dp"
+                app:allowDeselection="false"
+                app:customLayout="@layout/view_toggle_button"
+                app:dividerColor="@android:color/darker_gray"
+                app:selectedColor="?attr/colorAccent"
+
+                app:multipleSelection="true"
+                app:toggleMode="even" />
 
 
-            android:background="@drawable/blue_rounded_button"/>
-
-        <TextView
-            android:id="@+id/filter_btn_clear"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="right"
-            android:text="Сбросить"
-            android:textSize="20sp"
-            android:textColor="@color/link_blue" />
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        </LinearLayout>
 
 
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+
+                android:id="@+id/filter_btn_accept"
+                android:padding="10dp"
+                android:layout_gravity="start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Применить"
+
+                android:textColor="@color/white"
+                android:background="@drawable/blue_rounded_button"
+                />
 
 
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
-</LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

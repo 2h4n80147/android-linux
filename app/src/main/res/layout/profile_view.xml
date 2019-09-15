@@ -14,18 +14,18 @@
         >
         <TextView
             android:id="@+id/profile_toolbar_header"
+            android:text="Name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:textStyle="bold"
-
+            android:textSize="20sp"
             />
 
 
     </androidx.appcompat.widget.Toolbar>
     <ScrollView
         android:layout_marginTop="?attr/actionBarSize"
-        android:background="@drawable/white_grey_border_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -96,7 +96,7 @@
                         android:textStyle="bold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/profile"
+                        android:id="@+id/profile_name"
                         android:text="KKKK"/>
                 </LinearLayout>
 
@@ -117,7 +117,7 @@
                         android:textColor="@color/black"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/edu_city"
+                        android:id="@+id/profile_city"
                         android:text="Almaty"/>
 
                 </LinearLayout>
@@ -137,7 +137,7 @@
                         android:textColor="@color/black"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/detail_edu_fields"
+                        android:id="@+id/profile_edu_fields"
                         android:text="Phsysics, Mathematics, Algebra"/>
                 </LinearLayout>
                 <LinearLayout
@@ -155,7 +155,7 @@
                         android:textColor="@color/black"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/edu_cost_range"
+                        android:id="@+id/profile_cost_range"
                         android:text=" от 1146 до 1250 тг/час"/>
                 </LinearLayout>
                 <LinearLayout

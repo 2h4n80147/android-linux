@@ -47,6 +47,7 @@
                     android:layout_height="20dp"
                     android:layout_width="20dp"
                     android:src="@drawable/ic_school_foreground"
+
                     />
             </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
@@ -89,7 +90,9 @@
         </androidx.viewpager.widget.ViewPager>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+
             android:id="@+id/fab_filter"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"

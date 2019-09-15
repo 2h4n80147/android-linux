@@ -8,20 +8,17 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.zhaku.detailing.R
 import com.zhaku.detailing.data.backendApiService
+import kotlinx.android.synthetic.main.profile_view.*
 
 
 class ProfileFragment : Fragment() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
     val TAG = "ProfileFragment"
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        Log.d("oncreate", TAG)
+        Log.d(TAG, "oncreate")
 
 
         val rootView = inflater.inflate(R.layout.profile_view, container, false)
@@ -30,8 +27,6 @@ class ProfileFragment : Fragment() {
             val intent = Intent(rootView.context, EditProfile::class.java)
             startActivity(intent)
         }
-
-
         return rootView
     }
     fun getUserInfo() {
