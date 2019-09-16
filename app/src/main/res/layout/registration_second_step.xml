@@ -134,14 +134,15 @@
 
                     >
 
-                        <LinearLayout
+                        <RadioGroup
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
                             >
-                            <LinearLayout
+                            <RadioGroup
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:orientation="horizontal"
                                 >
                                 <RadioButton
                                     android:id="@+id/edit_prefferedplace_student"
@@ -156,14 +157,14 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="У преподователя"/>
-                            </LinearLayout>
+                            </RadioGroup>
                             <RadioButton
                                 android:id="@+id/edit_prefferedplace_any"
                                 android:buttonTint="@color/black"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Без разницы"/>
-                        </LinearLayout>
+                        </RadioGroup>
 
                 </RadioGroup>
             </LinearLayout>

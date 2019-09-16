@@ -29,8 +29,12 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import android.widget.Toast
-import co.ceryle.radiorealbutton.RadioRealButtonGroup
+import com.savvyapps.togglebuttonlayout.ToggleButtonLayout
 import kotlinx.android.synthetic.main.item_detail_edu.view.*
+import android.widget.RadioButton
+import android.widget.RadioGroup
+
+
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -71,7 +75,8 @@ class SearchFragment : Fragment() {
     lateinit var filterApplyButton : Button
     lateinit var filterClearButton : TextView
     lateinit var filter_edfields : NachoTextView
-    lateinit var sexChoice : RadioRealButtonGroup
+    lateinit var filter_preffered_place : RadioGroup
+    lateinit var sexChoice : ToggleButtonLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -98,14 +103,42 @@ class SearchFragment : Fragment() {
             mBottomSheetDialog.show()
             with(sheetView) {
                 cityChoice = findViewById(R.id.filter_city_choice)
-                sexChoice = findViewById(R.id.filter_sexchoice)
+                //sexChoice = findViewById(R.id.filter_sexchoice)
 
                 minCost = findViewById(R.id.filter_min_cost)
                 maxCost = findViewById(R.id.filter_max_cost)
                 filterApplyButton = findViewById(R.id.filter_btn_accept)
                 filterClearButton = findViewById(R.id.filter_btn_clear)
                 filter_edfields = findViewById(R.id.filter_edfields)
+                filter_preffered_place = findViewById(R.id.filter_preffered_place)
+
             }
+            filterClearButton.setOnClickListener{
+                minCost.clearFocus()
+                maxCost.clearFocus()
+                filter_edfields.clearFocus()
+                filter_preffered_place.clearCheck()
+            }
+
+               filter_preffered_place.setOnCheckedChangeListener(object : RadioGroup.OnCheckedChangeListener  {
+                   override fun onCheckedChanged(group: RadioGroup, id: Int) {
+                       val checkedIndex = group.indexOfChild(group.findViewById(id))
+                       when(checkedIndex) {
+                           0 -> {
+                               //student
+
+                           }
+                           1 -> {
+                               //tutor
+                           }
+                           2 -> {
+                               //any
+
+                           }
+                       }
+                   }
+
+               })
 
             minCost.setIndicatorTextDecimalFormat("0")
             maxCost.setIndicatorTextDecimalFormat("0")

@@ -25,7 +25,6 @@ class RegisterActivity : AppCompatActivity() {
             beginTransaction().
             replace(R.id.reg_host_fragment, f)
             .commit()
-
     }
 //    fun validatefields()
 //    {
